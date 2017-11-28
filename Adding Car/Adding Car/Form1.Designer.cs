@@ -34,16 +34,25 @@
             this.brandComboBox = new System.Windows.Forms.ComboBox();
             this.seatsLabel = new System.Windows.Forms.Label();
             this.seatsComboBox = new System.Windows.Forms.ComboBox();
-            this.gearboxLabel = new System.Windows.Forms.Label();
-            this.gearboxComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.gearLabel = new System.Windows.Forms.Label();
+            this.gearComboBox = new System.Windows.Forms.ComboBox();
+            this.maxSpeedLabel = new System.Windows.Forms.Label();
             this.maxSpeedNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.colourLabel = new System.Windows.Forms.Label();
+            this.colourComboBox = new System.Windows.Forms.ComboBox();
+            this.modelLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.enginePowerLabel = new System.Windows.Forms.Label();
+            this.enginePowerNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.nrofdoorsLabel = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.maxSpeedNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enginePowerNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(643, 496);
+            this.addButton.Location = new System.Drawing.Point(408, 370);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 0;
@@ -52,7 +61,7 @@
             // 
             // quitButton
             // 
-            this.quitButton.Location = new System.Drawing.Point(562, 496);
+            this.quitButton.Location = new System.Drawing.Point(327, 370);
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(75, 23);
             this.quitButton.TabIndex = 1;
@@ -61,9 +70,9 @@
             // 
             // brandLabel
             // 
-            this.brandLabel.Location = new System.Drawing.Point(40, 18);
+            this.brandLabel.Location = new System.Drawing.Point(12, 18);
             this.brandLabel.Name = "brandLabel";
-            this.brandLabel.Size = new System.Drawing.Size(78, 21);
+            this.brandLabel.Size = new System.Drawing.Size(106, 21);
             this.brandLabel.TabIndex = 2;
             this.brandLabel.Text = "Brand:";
             this.brandLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,16 +80,25 @@
             // brandComboBox
             // 
             this.brandComboBox.FormattingEnabled = true;
-            this.brandComboBox.Location = new System.Drawing.Point(124, 18);
+            this.brandComboBox.Items.AddRange(new object[] {
+            "Audi",
+            "BMW",
+            "Ford",
+            "Hundai",
+            "Mercedes",
+            "Porsche",
+            "Volkswagen"});
+            this.brandComboBox.Location = new System.Drawing.Point(125, 18);
             this.brandComboBox.Name = "brandComboBox";
             this.brandComboBox.Size = new System.Drawing.Size(121, 21);
+            this.brandComboBox.Sorted = true;
             this.brandComboBox.TabIndex = 3;
             // 
             // seatsLabel
             // 
-            this.seatsLabel.Location = new System.Drawing.Point(40, 51);
+            this.seatsLabel.Location = new System.Drawing.Point(12, 229);
             this.seatsLabel.Name = "seatsLabel";
-            this.seatsLabel.Size = new System.Drawing.Size(78, 23);
+            this.seatsLabel.Size = new System.Drawing.Size(106, 23);
             this.seatsLabel.TabIndex = 4;
             this.seatsLabel.Text = "Seats:";
             this.seatsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -88,40 +106,40 @@
             // seatsComboBox
             // 
             this.seatsComboBox.FormattingEnabled = true;
-            this.seatsComboBox.Location = new System.Drawing.Point(124, 53);
+            this.seatsComboBox.Location = new System.Drawing.Point(124, 231);
             this.seatsComboBox.Name = "seatsComboBox";
             this.seatsComboBox.Size = new System.Drawing.Size(121, 21);
             this.seatsComboBox.TabIndex = 5;
             // 
-            // gearboxLabel
+            // gearLabel
             // 
-            this.gearboxLabel.Location = new System.Drawing.Point(40, 87);
-            this.gearboxLabel.Name = "gearboxLabel";
-            this.gearboxLabel.Size = new System.Drawing.Size(78, 23);
-            this.gearboxLabel.TabIndex = 6;
-            this.gearboxLabel.Text = "Gearbox:";
-            this.gearboxLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gearLabel.Location = new System.Drawing.Point(12, 120);
+            this.gearLabel.Name = "gearLabel";
+            this.gearLabel.Size = new System.Drawing.Size(106, 23);
+            this.gearLabel.TabIndex = 6;
+            this.gearLabel.Text = "Gear:";
+            this.gearLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gearboxComboBox
+            // gearComboBox
             // 
-            this.gearboxComboBox.FormattingEnabled = true;
-            this.gearboxComboBox.Location = new System.Drawing.Point(124, 89);
-            this.gearboxComboBox.Name = "gearboxComboBox";
-            this.gearboxComboBox.Size = new System.Drawing.Size(121, 21);
-            this.gearboxComboBox.TabIndex = 7;
+            this.gearComboBox.FormattingEnabled = true;
+            this.gearComboBox.Location = new System.Drawing.Point(125, 122);
+            this.gearComboBox.Name = "gearComboBox";
+            this.gearComboBox.Size = new System.Drawing.Size(121, 21);
+            this.gearComboBox.TabIndex = 7;
             // 
-            // label1
+            // maxSpeedLabel
             // 
-            this.label1.Location = new System.Drawing.Point(43, 121);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 27);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Maximum Speed:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.maxSpeedLabel.Location = new System.Drawing.Point(12, 154);
+            this.maxSpeedLabel.Name = "maxSpeedLabel";
+            this.maxSpeedLabel.Size = new System.Drawing.Size(106, 27);
+            this.maxSpeedLabel.TabIndex = 8;
+            this.maxSpeedLabel.Text = "Maximum Speed:";
+            this.maxSpeedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // maxSpeedNumericUpDown
             // 
-            this.maxSpeedNumericUpDown.Location = new System.Drawing.Point(125, 127);
+            this.maxSpeedNumericUpDown.Location = new System.Drawing.Point(125, 159);
             this.maxSpeedNumericUpDown.Maximum = new decimal(new int[] {
             500,
             0,
@@ -132,15 +150,90 @@
             this.maxSpeedNumericUpDown.TabIndex = 9;
             this.maxSpeedNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // colourLabel
+            // 
+            this.colourLabel.Location = new System.Drawing.Point(12, 195);
+            this.colourLabel.Name = "colourLabel";
+            this.colourLabel.Size = new System.Drawing.Size(106, 23);
+            this.colourLabel.TabIndex = 10;
+            this.colourLabel.Text = "Colour:";
+            this.colourLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // colourComboBox
+            // 
+            this.colourComboBox.FormattingEnabled = true;
+            this.colourComboBox.Location = new System.Drawing.Point(124, 197);
+            this.colourComboBox.Name = "colourComboBox";
+            this.colourComboBox.Size = new System.Drawing.Size(121, 21);
+            this.colourComboBox.TabIndex = 11;
+            // 
+            // modelLabel
+            // 
+            this.modelLabel.Location = new System.Drawing.Point(12, 50);
+            this.modelLabel.Name = "modelLabel";
+            this.modelLabel.Size = new System.Drawing.Size(106, 23);
+            this.modelLabel.TabIndex = 12;
+            this.modelLabel.Text = "Model:";
+            this.modelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(125, 53);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(121, 20);
+            this.textBox1.TabIndex = 13;
+            // 
+            // enginePowerLabel
+            // 
+            this.enginePowerLabel.Location = new System.Drawing.Point(12, 86);
+            this.enginePowerLabel.Name = "enginePowerLabel";
+            this.enginePowerLabel.Size = new System.Drawing.Size(106, 23);
+            this.enginePowerLabel.TabIndex = 14;
+            this.enginePowerLabel.Text = "Engine Power:";
+            this.enginePowerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // enginePowerNumericUpDown
+            // 
+            this.enginePowerNumericUpDown.Location = new System.Drawing.Point(124, 89);
+            this.enginePowerNumericUpDown.Name = "enginePowerNumericUpDown";
+            this.enginePowerNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.enginePowerNumericUpDown.TabIndex = 15;
+            this.enginePowerNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // nrofdoorsLabel
+            // 
+            this.nrofdoorsLabel.Location = new System.Drawing.Point(15, 263);
+            this.nrofdoorsLabel.Name = "nrofdoorsLabel";
+            this.nrofdoorsLabel.Size = new System.Drawing.Size(103, 23);
+            this.nrofdoorsLabel.TabIndex = 16;
+            this.nrofdoorsLabel.Text = "Nr. of Doors";
+            this.nrofdoorsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(125, 265);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(119, 21);
+            this.comboBox1.TabIndex = 17;
+            // 
             // addACar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 531);
+            this.ClientSize = new System.Drawing.Size(495, 405);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.nrofdoorsLabel);
+            this.Controls.Add(this.enginePowerNumericUpDown);
+            this.Controls.Add(this.enginePowerLabel);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.modelLabel);
+            this.Controls.Add(this.colourComboBox);
+            this.Controls.Add(this.colourLabel);
             this.Controls.Add(this.maxSpeedNumericUpDown);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.gearboxComboBox);
-            this.Controls.Add(this.gearboxLabel);
+            this.Controls.Add(this.maxSpeedLabel);
+            this.Controls.Add(this.gearComboBox);
+            this.Controls.Add(this.gearLabel);
             this.Controls.Add(this.seatsComboBox);
             this.Controls.Add(this.seatsLabel);
             this.Controls.Add(this.brandComboBox);
@@ -150,7 +243,9 @@
             this.Name = "addACar";
             this.Text = "Add a Car";
             ((System.ComponentModel.ISupportInitialize)(this.maxSpeedNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enginePowerNumericUpDown)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -162,10 +257,18 @@
         private System.Windows.Forms.ComboBox brandComboBox;
         private System.Windows.Forms.Label seatsLabel;
         private System.Windows.Forms.ComboBox seatsComboBox;
-        private System.Windows.Forms.Label gearboxLabel;
-        private System.Windows.Forms.ComboBox gearboxComboBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label gearLabel;
+        private System.Windows.Forms.ComboBox gearComboBox;
+        private System.Windows.Forms.Label maxSpeedLabel;
         private System.Windows.Forms.NumericUpDown maxSpeedNumericUpDown;
+        private System.Windows.Forms.Label colourLabel;
+        private System.Windows.Forms.ComboBox colourComboBox;
+        private System.Windows.Forms.Label modelLabel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label enginePowerLabel;
+        private System.Windows.Forms.NumericUpDown enginePowerNumericUpDown;
+        private System.Windows.Forms.Label nrofdoorsLabel;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
