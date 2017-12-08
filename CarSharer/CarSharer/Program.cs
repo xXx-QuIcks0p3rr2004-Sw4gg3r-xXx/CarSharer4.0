@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Adding_Car
+namespace CarSharer
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Adding_Car
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new addACar());
+            Application.Run(new LoginForm());
         }
     }
 }
