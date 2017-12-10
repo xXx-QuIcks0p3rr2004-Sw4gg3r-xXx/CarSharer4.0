@@ -7,69 +7,43 @@ using MySql.Data.MySqlClient;
 using MySql;
 using MetroFramework.Forms;
 using System.Data;
-using System.Security.Cryptography;
 
 namespace CarSharer
 {
     public static class DbController
     {
-        // set connection string to my local sql server database
-        // can be retrieved from the database connection properties in the Server-Explorer
-        public static void Connecttodsa()
-        {
-            string connectionString = @"host=localhost;user=root;database=test";
-            // create SqlConnection object
-            using (MySqlConnection con = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    // open connection to database
-                    con.Open();
-                    // INTERACTION WITH DATABASE COMES HERE
-                }
-                catch(Exception e)
-                {
-                    throw e;
-                }
-                finally
-                {
-                    // close connection to database
-                    con.Close();
-                }
-            }
-        }
         public static bool ValidatePasscode(string username, string passcode)
         {
-            string constr = @"Server=http://carsharingschool.bplaced.net/localhost;Database=carsharing;User Id=carsharingschool;Password=carsharing;";
-
-            using (MySqlConnection con = new MySqlConnection(constr))
+            using (MySqlConnection con = new MySqlConnection(@"host=mysql8.db4free.net;user=schoolproject;password=carsharing;database=carsharing4;port=3307"))
             {
                 try
                 {
                     // open connection to database
                     con.Open();
-                    // INTERACTION WITH DATABASE COMES HERE
-                    string SqlString = "Select * From Contacts Where FirstName = @FirstName";
-
-                    using (MySqlCommand cmd = new MySqlCommand(SqlString, con))
+                    // INTERACTION WITH DATABASE
+                    using (MySqlCommand cmd = new MySqlCommand("Select Passcode From Person Where Username = @username;", con))
                     {
                         cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("FirstName", username);
+                        cmd.Parameters.AddWithValue("username", username);
 
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            if (reader.ToString() == /*sha256_hash(passcode)*/ "1234")
+                            if (reader.Read())
                             {
-                                con.Close();
-                                return true;
+                                if (reader.GetString(0) == /*sha256_hash(passcode)*/ "1")
+                                {
+                                    return true;
+                                }
+                                else throw new Exception();
                             }
+                            else throw new Exception();
                         }
                     }
 
                 }
-                catch(Exception e)
+                catch(Exception)
                 {
-                    throw e;
+                    return false;
                 }
                 finally
                 {
@@ -77,27 +51,6 @@ namespace CarSharer
                     con.Close();
                 }
             }
-            return false;
-        }
-        /// <summary>
-        /// Method that hashes a string with sha256.
-        /// </summary>
-        /// <param name="value">String to hash.</param>
-        /// <returns>Returns a hashed string.</returns>
-        public static String sha256_hash(string value)
-        {
-            StringBuilder Sb = new StringBuilder();
-
-            using (var hash = SHA256.Create())
-            {
-                Encoding enc = Encoding.UTF8;
-                Byte[] result = hash.ComputeHash(enc.GetBytes(value));
-
-                foreach (Byte b in result)
-                    Sb.Append(b.ToString("x2"));
-            }
-
-            return Sb.ToString();
         }
     }
 }

@@ -11,12 +11,14 @@ namespace CarSharer
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
+        static LoginForm myLoginForm;
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(myLoginForm = new LoginForm());
         }
     }
 }

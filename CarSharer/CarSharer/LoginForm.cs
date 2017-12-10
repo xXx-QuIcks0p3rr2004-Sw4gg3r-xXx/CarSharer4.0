@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
-
+using MetroFramework;
 
 namespace CarSharer
 {
     public partial class LoginForm : MetroForm
     {
+
+        //private bool passcodeValidated;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -21,7 +24,17 @@ namespace CarSharer
 
         private void LoginTile_Click(object sender, EventArgs e)
         {
-            DbController.ValidatePasscode(UsernameTextBox.Text, PasscodeTextBox.Text);
+            if (DbController.ValidatePasscode(UsernameTextBox.Text, PasscodeTextBox.Text))
+            {
+                //passcodeValidated = true;
+                Form1 myMainForm = new Form1();
+                myMainForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "The username or passcode is not valid.");
+            }
         }
 
         private void PasscodeTextBox_Leave(object sender, EventArgs e)
@@ -62,5 +75,21 @@ namespace CarSharer
                 }
             }
         }
+
+        private void CreatAccountTile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    if (passcodeValidated)
+        //    {
+        //        //Program.CreateForm();
+
+        //        Form1 myMainForm = new Form1();
+        //        myMainForm.Show();
+        //    }
+        //}
     }
 }

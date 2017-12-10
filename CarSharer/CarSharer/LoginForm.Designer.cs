@@ -33,6 +33,7 @@
             this.UsernameTextBox = new MetroFramework.Controls.MetroTextBox();
             this.PasscodeTextBox = new MetroFramework.Controls.MetroTextBox();
             this.LoginTile = new MetroFramework.Controls.MetroTile();
+            this.CreatAccountTile = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // UsernameLabel
@@ -118,19 +119,33 @@
             // LoginTile
             // 
             this.LoginTile.ActiveControl = null;
-            this.LoginTile.Location = new System.Drawing.Point(175, 132);
+            this.LoginTile.Location = new System.Drawing.Point(175, 141);
             this.LoginTile.Name = "LoginTile";
-            this.LoginTile.Size = new System.Drawing.Size(75, 23);
+            this.LoginTile.Size = new System.Drawing.Size(75, 39);
             this.LoginTile.TabIndex = 4;
             this.LoginTile.Text = "Login";
+            this.LoginTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LoginTile.UseSelectable = true;
             this.LoginTile.Click += new System.EventHandler(this.LoginTile_Click);
+            // 
+            // CreatAccountTile
+            // 
+            this.CreatAccountTile.ActiveControl = null;
+            this.CreatAccountTile.Location = new System.Drawing.Point(23, 141);
+            this.CreatAccountTile.Name = "CreatAccountTile";
+            this.CreatAccountTile.Size = new System.Drawing.Size(146, 39);
+            this.CreatAccountTile.TabIndex = 5;
+            this.CreatAccountTile.Text = "Create Account";
+            this.CreatAccountTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CreatAccountTile.UseSelectable = true;
+            this.CreatAccountTile.Click += new System.EventHandler(this.CreatAccountTile_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 178);
+            this.ClientSize = new System.Drawing.Size(284, 203);
+            this.Controls.Add(this.CreatAccountTile);
             this.Controls.Add(this.LoginTile);
             this.Controls.Add(this.PasscodeTextBox);
             this.Controls.Add(this.UsernameTextBox);
@@ -150,6 +165,7 @@
         private MetroFramework.Controls.MetroTextBox UsernameTextBox;
         private MetroFramework.Controls.MetroTextBox PasscodeTextBox;
         private MetroFramework.Controls.MetroTile LoginTile;
+        private MetroFramework.Controls.MetroTile CreatAccountTile;
     }
 }
 
