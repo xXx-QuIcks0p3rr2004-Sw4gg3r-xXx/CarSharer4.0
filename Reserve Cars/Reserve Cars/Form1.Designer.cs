@@ -28,20 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Car_ID");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Brand");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Model");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Reserved");
             this.Savebutton = new System.Windows.Forms.Button();
             this.Exitbutton = new System.Windows.Forms.Button();
-            this.CarList = new System.Windows.Forms.ListView();
-            this.Car_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Reservebutton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CarBrand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Savebutton
             // 
-            this.Savebutton.Location = new System.Drawing.Point(627, 543);
+            this.Savebutton.Location = new System.Drawing.Point(627, 295);
             this.Savebutton.Name = "Savebutton";
             this.Savebutton.Size = new System.Drawing.Size(75, 23);
             this.Savebutton.TabIndex = 0;
@@ -50,48 +47,55 @@
             // 
             // Exitbutton
             // 
-            this.Exitbutton.Location = new System.Drawing.Point(708, 543);
+            this.Exitbutton.Location = new System.Drawing.Point(708, 295);
             this.Exitbutton.Name = "Exitbutton";
             this.Exitbutton.Size = new System.Drawing.Size(75, 23);
             this.Exitbutton.TabIndex = 2;
             this.Exitbutton.Text = "Exit";
             this.Exitbutton.UseVisualStyleBackColor = true;
             // 
-            // CarList
-            // 
-            this.CarList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Car_ID});
-            this.CarList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4});
-            this.CarList.Location = new System.Drawing.Point(12, 12);
-            this.CarList.Name = "CarList";
-            this.CarList.Size = new System.Drawing.Size(771, 525);
-            this.CarList.TabIndex = 3;
-            this.CarList.UseCompatibleStateImageBehavior = false;
-            // 
             // Reservebutton
             // 
-            this.Reservebutton.Location = new System.Drawing.Point(12, 543);
+            this.Reservebutton.Location = new System.Drawing.Point(12, 295);
             this.Reservebutton.Name = "Reservebutton";
             this.Reservebutton.Size = new System.Drawing.Size(124, 23);
             this.Reservebutton.TabIndex = 4;
             this.Reservebutton.Text = "Reserve selected Car";
             this.Reservebutton.UseVisualStyleBackColor = true;
+            this.Reservebutton.Click += new System.EventHandler(this.Reservebutton_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CarBrand});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(771, 277);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // CarBrand
+            // 
+            this.CarBrand.HeaderText = "Brand";
+            this.CarBrand.Name = "CarBrand";
+            this.CarBrand.ReadOnly = true;
             // 
             // CarReserver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 578);
+            this.ClientSize = new System.Drawing.Size(795, 330);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Reservebutton);
-            this.Controls.Add(this.CarList);
             this.Controls.Add(this.Exitbutton);
             this.Controls.Add(this.Savebutton);
             this.Name = "CarReserver";
             this.Text = "CarReserver";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -100,9 +104,9 @@
 
         private System.Windows.Forms.Button Savebutton;
         private System.Windows.Forms.Button Exitbutton;
-        private System.Windows.Forms.ListView CarList;
-        private System.Windows.Forms.ColumnHeader Car_ID;
         private System.Windows.Forms.Button Reservebutton;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CarBrand;
     }
 }
 
