@@ -14,9 +14,26 @@ namespace CarSharer
 {
     public partial class CreateAccountForm : MetroForm
     {
-        public CreateAccountForm()
+        private LoginForm currentloginForm;
+
+        public CreateAccountForm(LoginForm loginForm)
         {
             InitializeComponent();
+            currentloginForm = loginForm;
+        }
+
+        private void CreateAccountForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            currentloginForm.Show();
+        }
+
+        private void ProceedTile_Click(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrEmpty(UsernameTextBox.Text) && string.IsNullOrEmpty(NameTextBox.Text) && string.IsNullOrEmpty(EmailTextBox.Text) && string.IsNullOrEmpty(PasscodeTextBox.Text)))
+            {
+                DbController.InsertAccount(UsernameTextBox.Text, NameTextBox.Text, DateofbirthDateTime.Value, EmailTextBox.Text, PasscodeTextBox.Text, this);
+            }
+            else MetroMessageBox.Show(this, "You have to give us some more information.");
         }
     }
 }

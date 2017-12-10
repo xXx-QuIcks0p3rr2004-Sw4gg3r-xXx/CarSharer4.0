@@ -153,6 +153,7 @@
             this.Controls.Add(this.UsernameLabel);
             this.Name = "LoginForm";
             this.Text = "Login";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -14,9 +14,6 @@ namespace CarSharer
 {
     public partial class LoginForm : MetroForm
     {
-
-        //private bool passcodeValidated;
-
         public LoginForm()
         {
             InitializeComponent();
@@ -26,7 +23,6 @@ namespace CarSharer
         {
             if (DbController.ValidatePasscode(UsernameTextBox.Text, PasscodeTextBox.Text))
             {
-                //passcodeValidated = true;
                 Form1 myMainForm = new Form1();
                 myMainForm.Show();
                 this.Hide();
@@ -42,6 +38,10 @@ namespace CarSharer
             if (string.IsNullOrEmpty(UsernameTextBox.Text))
             {
                 UsernameTextBox.Focus();
+            }
+            else
+            {
+                LoginTile_Click(null, EventArgs.Empty);
             }
         }
 
@@ -78,18 +78,17 @@ namespace CarSharer
 
         private void CreatAccountTile_Click(object sender, EventArgs e)
         {
-
+            CreateAccountForm createAccountForm = new CreateAccountForm(this);
+            this.Hide();
+            createAccountForm.Show();
         }
 
-        //private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
-        //{
-        //    if (passcodeValidated)
-        //    {
-        //        //Program.CreateForm();
-
-        //        Form1 myMainForm = new Form1();
-        //        myMainForm.Show();
-        //    }
-        //}
+        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginTile_Click(null, EventArgs.Empty);
+            }
+        }
     }
 }
