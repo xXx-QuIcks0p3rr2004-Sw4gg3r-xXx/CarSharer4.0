@@ -32,6 +32,9 @@ namespace CarSharer
             if (!(string.IsNullOrEmpty(UsernameTextBox.Text) && string.IsNullOrEmpty(NameTextBox.Text) && string.IsNullOrEmpty(EmailTextBox.Text) && string.IsNullOrEmpty(PasscodeTextBox.Text)))
             {
                 DbController.InsertAccount(UsernameTextBox.Text, NameTextBox.Text, DateofbirthDateTime.Value, EmailTextBox.Text, PasscodeTextBox.Text, this);
+
+                currentloginForm.Show();
+                this.Close();
             }
             else MetroMessageBox.Show(this, "You have to give us some more information.");
         }
