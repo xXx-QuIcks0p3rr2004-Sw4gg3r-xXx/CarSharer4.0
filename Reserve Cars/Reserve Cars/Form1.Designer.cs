@@ -33,12 +33,20 @@
             this.Reservebutton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CarBrand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CarModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CarPS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CarSeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CarSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CarPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CarFuel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CarGearbox = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CarColour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Savebutton
             // 
-            this.Savebutton.Location = new System.Drawing.Point(627, 295);
+            this.Savebutton.Location = new System.Drawing.Point(799, 295);
             this.Savebutton.Name = "Savebutton";
             this.Savebutton.Size = new System.Drawing.Size(75, 23);
             this.Savebutton.TabIndex = 0;
@@ -47,7 +55,7 @@
             // 
             // Exitbutton
             // 
-            this.Exitbutton.Location = new System.Drawing.Point(708, 295);
+            this.Exitbutton.Location = new System.Drawing.Point(880, 295);
             this.Exitbutton.Name = "Exitbutton";
             this.Exitbutton.Size = new System.Drawing.Size(75, 23);
             this.Exitbutton.TabIndex = 2;
@@ -69,12 +77,20 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CarBrand});
+            this.CarBrand,
+            this.CarModel,
+            this.CarPS,
+            this.CarSeats,
+            this.CarSpeed,
+            this.CarPrice,
+            this.CarFuel,
+            this.CarGearbox,
+            this.CarColour});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(771, 277);
+            this.dataGridView1.Size = new System.Drawing.Size(943, 277);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -84,17 +100,66 @@
             this.CarBrand.Name = "CarBrand";
             this.CarBrand.ReadOnly = true;
             // 
+            // CarModel
+            // 
+            this.CarModel.HeaderText = "Model";
+            this.CarModel.Name = "CarModel";
+            this.CarModel.ReadOnly = true;
+            // 
+            // CarPS
+            // 
+            this.CarPS.HeaderText = "PS";
+            this.CarPS.Name = "CarPS";
+            this.CarPS.ReadOnly = true;
+            // 
+            // CarSeats
+            // 
+            this.CarSeats.HeaderText = "Seats";
+            this.CarSeats.Name = "CarSeats";
+            this.CarSeats.ReadOnly = true;
+            // 
+            // CarSpeed
+            // 
+            this.CarSpeed.HeaderText = "Max V.";
+            this.CarSpeed.Name = "CarSpeed";
+            this.CarSpeed.ReadOnly = true;
+            // 
+            // CarPrice
+            // 
+            this.CarPrice.HeaderText = "Price";
+            this.CarPrice.Name = "CarPrice";
+            this.CarPrice.ReadOnly = true;
+            // 
+            // CarFuel
+            // 
+            this.CarFuel.HeaderText = "Fuel";
+            this.CarFuel.Name = "CarFuel";
+            this.CarFuel.ReadOnly = true;
+            // 
+            // CarGearbox
+            // 
+            this.CarGearbox.HeaderText = "Gearbox";
+            this.CarGearbox.Name = "CarGearbox";
+            this.CarGearbox.ReadOnly = true;
+            // 
+            // CarColour
+            // 
+            this.CarColour.HeaderText = "Colour";
+            this.CarColour.Name = "CarColour";
+            this.CarColour.ReadOnly = true;
+            // 
             // CarReserver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 330);
+            this.ClientSize = new System.Drawing.Size(966, 330);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Reservebutton);
             this.Controls.Add(this.Exitbutton);
             this.Controls.Add(this.Savebutton);
             this.Name = "CarReserver";
             this.Text = "CarReserver";
+            this.Load += new System.EventHandler(this.CarReserver_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -107,6 +172,14 @@
         private System.Windows.Forms.Button Reservebutton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarBrand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CarModel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CarPS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CarSeats;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CarSpeed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CarPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CarFuel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CarGearbox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CarColour;
     }
 }
 

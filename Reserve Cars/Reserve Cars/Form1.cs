@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Reserve_Cars
 {
     public partial class CarReserver : Form
@@ -23,6 +24,11 @@ namespace Reserve_Cars
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void CarReserver_Load(object sender, EventArgs e)
         {
 
         }
