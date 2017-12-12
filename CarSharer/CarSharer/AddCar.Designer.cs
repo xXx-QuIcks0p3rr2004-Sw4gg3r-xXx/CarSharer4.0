@@ -149,14 +149,14 @@
             0,
             0,
             0});
-            this.maxSpeedNumericUpDown.Location = new System.Drawing.Point(145, 170);
+            this.maxSpeedNumericUpDown.Location = new System.Drawing.Point(165, 170);
             this.maxSpeedNumericUpDown.Maximum = new decimal(new int[] {
             500,
             0,
             0,
             0});
             this.maxSpeedNumericUpDown.Name = "maxSpeedNumericUpDown";
-            this.maxSpeedNumericUpDown.Size = new System.Drawing.Size(144, 20);
+            this.maxSpeedNumericUpDown.Size = new System.Drawing.Size(124, 20);
             this.maxSpeedNumericUpDown.TabIndex = 9;
             this.maxSpeedNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
