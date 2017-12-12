@@ -18,7 +18,6 @@ namespace CarSharer
         {
             InitializeComponent();
         }
-
         private void LoginTile_Click(object sender, EventArgs e)
         {
             if (DbController.ValidatePasscode(UsernameTextBox.Text, PasscodeTextBox.Text))
