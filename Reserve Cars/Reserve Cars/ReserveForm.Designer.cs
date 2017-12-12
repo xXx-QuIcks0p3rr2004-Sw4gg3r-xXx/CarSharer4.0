@@ -31,7 +31,7 @@
             this.Savebutton = new System.Windows.Forms.Button();
             this.Exitbutton = new System.Windows.Forms.Button();
             this.Reservebutton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CarGridView = new System.Windows.Forms.DataGridView();
             this.CarBrand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarPS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +41,7 @@
             this.CarFuel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarGearbox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarColour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // Savebutton
@@ -72,11 +72,11 @@
             this.Reservebutton.UseVisualStyleBackColor = true;
             this.Reservebutton.Click += new System.EventHandler(this.Reservebutton_Click);
             // 
-            // dataGridView1
+            // CarGridView
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CarGridView.BackgroundColor = System.Drawing.Color.White;
+            this.CarGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CarGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CarBrand,
             this.CarModel,
             this.CarPS,
@@ -86,13 +86,13 @@
             this.CarFuel,
             this.CarGearbox,
             this.CarColour});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(943, 277);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.CarGridView.Location = new System.Drawing.Point(12, 12);
+            this.CarGridView.MultiSelect = false;
+            this.CarGridView.Name = "CarGridView";
+            this.CarGridView.ReadOnly = true;
+            this.CarGridView.Size = new System.Drawing.Size(943, 277);
+            this.CarGridView.TabIndex = 5;
+            this.CarGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CarBrand
             // 
@@ -153,14 +153,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 330);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.CarGridView);
             this.Controls.Add(this.Reservebutton);
             this.Controls.Add(this.Exitbutton);
             this.Controls.Add(this.Savebutton);
             this.Name = "CarReserver";
             this.Text = "CarReserver";
             this.Load += new System.EventHandler(this.CarReserver_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,7 +170,7 @@
         private System.Windows.Forms.Button Savebutton;
         private System.Windows.Forms.Button Exitbutton;
         private System.Windows.Forms.Button Reservebutton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView CarGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarBrand;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarModel;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarPS;

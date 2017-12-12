@@ -13,6 +13,7 @@ namespace Reserve_Cars
 {
     public partial class CarReserver : Form
     {
+
         public CarReserver()
         {
             InitializeComponent();
@@ -30,7 +31,10 @@ namespace Reserve_Cars
 
         private void CarReserver_Load(object sender, EventArgs e)
         {
-
+            foreach (CarModel car in Database.GetCars())
+            {
+                CarGridView.Rows.Add(car.Brand, car.Model, car.PS, car.Seats, car.Speed, car.Price, car.Fuel, car.Gearbox, car.Colour);
+            }
         }
     }
 }
