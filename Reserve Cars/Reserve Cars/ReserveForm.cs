@@ -13,6 +13,7 @@ namespace Reserve_Cars
 {
     public partial class CarReserver : Form
     {
+        int i = 0;
 
         public CarReserver()
         {
@@ -31,10 +32,16 @@ namespace Reserve_Cars
 
         private void CarReserver_Load(object sender, EventArgs e)
         {
+            CarGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            CarGridView.AllowUserToAddRows = false;
             foreach (CarModel car in Database.GetCars())
             {
                 CarGridView.Rows.Add(car.Brand, car.Model, car.PS, car.Seats, car.Speed, car.Price, car.Fuel, car.Gearbox, car.Colour);
+                i++;
+                if(i == 1) FreeCarsLabel.Text = i + " Free Car:";
+                else FreeCarsLabel.Text = i + " Free Cars:";
             }
+
         }
     }
 }

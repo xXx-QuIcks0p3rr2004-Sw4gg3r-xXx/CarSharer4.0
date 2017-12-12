@@ -41,12 +41,13 @@
             this.CarFuel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarGearbox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarColour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FreeCarsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // Savebutton
             // 
-            this.Savebutton.Location = new System.Drawing.Point(799, 295);
+            this.Savebutton.Location = new System.Drawing.Point(759, 295);
             this.Savebutton.Name = "Savebutton";
             this.Savebutton.Size = new System.Drawing.Size(75, 23);
             this.Savebutton.TabIndex = 0;
@@ -55,7 +56,7 @@
             // 
             // Exitbutton
             // 
-            this.Exitbutton.Location = new System.Drawing.Point(880, 295);
+            this.Exitbutton.Location = new System.Drawing.Point(840, 295);
             this.Exitbutton.Name = "Exitbutton";
             this.Exitbutton.Size = new System.Drawing.Size(75, 23);
             this.Exitbutton.TabIndex = 2;
@@ -86,11 +87,12 @@
             this.CarFuel,
             this.CarGearbox,
             this.CarColour});
-            this.CarGridView.Location = new System.Drawing.Point(12, 12);
+            this.CarGridView.Location = new System.Drawing.Point(12, 25);
             this.CarGridView.MultiSelect = false;
             this.CarGridView.Name = "CarGridView";
             this.CarGridView.ReadOnly = true;
-            this.CarGridView.Size = new System.Drawing.Size(943, 277);
+            this.CarGridView.RowHeadersVisible = false;
+            this.CarGridView.Size = new System.Drawing.Size(903, 264);
             this.CarGridView.TabIndex = 5;
             this.CarGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -148,11 +150,21 @@
             this.CarColour.Name = "CarColour";
             this.CarColour.ReadOnly = true;
             // 
+            // FreeCarsLabel
+            // 
+            this.FreeCarsLabel.AutoSize = true;
+            this.FreeCarsLabel.Location = new System.Drawing.Point(12, 9);
+            this.FreeCarsLabel.Name = "FreeCarsLabel";
+            this.FreeCarsLabel.Size = new System.Drawing.Size(55, 13);
+            this.FreeCarsLabel.TabIndex = 6;
+            this.FreeCarsLabel.Text = "Free Cars:";
+            // 
             // CarReserver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 330);
+            this.ClientSize = new System.Drawing.Size(921, 330);
+            this.Controls.Add(this.FreeCarsLabel);
             this.Controls.Add(this.CarGridView);
             this.Controls.Add(this.Reservebutton);
             this.Controls.Add(this.Exitbutton);
@@ -162,6 +174,7 @@
             this.Load += new System.EventHandler(this.CarReserver_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -180,6 +193,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CarFuel;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarGearbox;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarColour;
+        private System.Windows.Forms.Label FreeCarsLabel;
     }
 }
 
