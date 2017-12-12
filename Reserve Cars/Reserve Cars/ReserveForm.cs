@@ -14,6 +14,7 @@ namespace Reserve_Cars
     public partial class CarReserver : Form
     {
         int i = 0;
+        int IdOfSelectedCar = 0;
 
         public CarReserver()
         {
@@ -22,7 +23,8 @@ namespace Reserve_Cars
 
         private void Reservebutton_Click(object sender, EventArgs e)
         {
-
+            IdOfSelectedCar = CarGridView.CurrentCell.RowIndex;
+            Database.SetReserved(IdOfSelectedCar);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

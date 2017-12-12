@@ -11,6 +11,8 @@ namespace Reserve_Cars
 {
     class Database
     {
+        
+
         internal static List<CarModel> GetCars()
         {
             List<CarModel> carModels = new List<CarModel>();
@@ -51,6 +53,33 @@ namespace Reserve_Cars
                 }
             }
             return carModels;
+
+        }
+        internal static void SetReserved(int ID)
+        {
+            string UpdateReserved = "UPDATE Car SET Reserved = " + DateTime.Now.AddMinutes(20) + "Where ID = " + ID ;
+
+            using (MySqlConnection mySqlConnection = new MySqlConnection(@"host=db4free.net;user=schoolproject;password=carsharing;database=carsharing4;port=3307"))
+            {
+                try
+                {
+                    mySqlConnection.Open();
+
+                    using (MySqlCommand mySqlCommand = new MySqlCommand(UpdateReserved))
+                    {
+                        
+                    }
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+                finally
+                {
+                    mySqlConnection.Close();
+                }
+            }
+            return;
 
         }
     }
