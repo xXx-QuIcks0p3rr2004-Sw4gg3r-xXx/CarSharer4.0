@@ -37,7 +37,6 @@ namespace Reserve_Cars
                                 Gearbox = row.ItemArray[7].ToString(),
                                 Fuel = row.ItemArray[8].ToString(),
                                 Colour = row.ItemArray[9].ToString(),
-                                Reserved = Convert.ToDateTime(row.ItemArray[10]),
                             });
                         }
                     }
