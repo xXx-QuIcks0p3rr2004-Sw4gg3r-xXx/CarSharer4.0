@@ -61,6 +61,7 @@ namespace CarSharer
                 }
             }
         }
+
         /// <summary>
         /// Inserts an new user into an online database.
         /// </summary>

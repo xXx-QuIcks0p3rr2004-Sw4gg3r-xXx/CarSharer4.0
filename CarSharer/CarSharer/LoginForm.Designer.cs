@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UsernameLabel = new MetroFramework.Controls.MetroLabel();
-            this.PasscodeLabel = new MetroFramework.Controls.MetroLabel();
+            this.usernameLabel = new MetroFramework.Controls.MetroLabel();
+            this.passcodeLabel = new MetroFramework.Controls.MetroLabel();
             this.UsernameTextBox = new MetroFramework.Controls.MetroTextBox();
             this.PasscodeTextBox = new MetroFramework.Controls.MetroTextBox();
             this.LoginTile = new MetroFramework.Controls.MetroTile();
             this.CreatAccountTile = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
-            // UsernameLabel
+            // usernameLabel
             // 
-            this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Location = new System.Drawing.Point(23, 63);
-            this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(68, 19);
-            this.UsernameLabel.TabIndex = 0;
-            this.UsernameLabel.Text = "Username";
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Location = new System.Drawing.Point(23, 63);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(68, 19);
+            this.usernameLabel.TabIndex = 0;
+            this.usernameLabel.Text = "Username";
             // 
-            // PasscodeLabel
+            // passcodeLabel
             // 
-            this.PasscodeLabel.AutoSize = true;
-            this.PasscodeLabel.Location = new System.Drawing.Point(23, 93);
-            this.PasscodeLabel.Name = "PasscodeLabel";
-            this.PasscodeLabel.Size = new System.Drawing.Size(62, 19);
-            this.PasscodeLabel.TabIndex = 1;
-            this.PasscodeLabel.Text = "Passcode";
+            this.passcodeLabel.AutoSize = true;
+            this.passcodeLabel.Location = new System.Drawing.Point(23, 93);
+            this.passcodeLabel.Name = "passcodeLabel";
+            this.passcodeLabel.Size = new System.Drawing.Size(62, 19);
+            this.passcodeLabel.TabIndex = 1;
+            this.passcodeLabel.Text = "Passcode";
             // 
             // UsernameTextBox
             // 
@@ -149,8 +149,8 @@
             this.Controls.Add(this.LoginTile);
             this.Controls.Add(this.PasscodeTextBox);
             this.Controls.Add(this.UsernameTextBox);
-            this.Controls.Add(this.PasscodeLabel);
-            this.Controls.Add(this.UsernameLabel);
+            this.Controls.Add(this.passcodeLabel);
+            this.Controls.Add(this.usernameLabel);
             this.Name = "LoginForm";
             this.Text = "Login";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyDown);
@@ -161,8 +161,8 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroLabel UsernameLabel;
-        private MetroFramework.Controls.MetroLabel PasscodeLabel;
+        private MetroFramework.Controls.MetroLabel usernameLabel;
+        private MetroFramework.Controls.MetroLabel passcodeLabel;
         private MetroFramework.Controls.MetroTextBox UsernameTextBox;
         private MetroFramework.Controls.MetroTextBox PasscodeTextBox;
         private MetroFramework.Controls.MetroTile LoginTile;

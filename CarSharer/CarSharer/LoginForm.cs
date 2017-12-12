@@ -22,7 +22,7 @@ namespace CarSharer
         {
             if (DbController.ValidatePasscode(UsernameTextBox.Text, PasscodeTextBox.Text))
             {
-                Form1 myMainForm = new Form1();
+                MainForm myMainForm = new MainForm(this, true);
                 myMainForm.Show();
                 this.Hide();
             }
@@ -49,7 +49,7 @@ namespace CarSharer
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (string.IsNullOrEmpty(PasscodeTextBox.Text))
+                if (string.IsNullOrEmpty(UsernameTextBox.Text))
                 {
                     PasscodeTextBox.Focus();
                 }
@@ -64,7 +64,7 @@ namespace CarSharer
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (string.IsNullOrEmpty(UsernameTextBox.Text))
+                if (string.IsNullOrEmpty(PasscodeTextBox.Text))
                 {
                     UsernameTextBox.Focus();
                 }
