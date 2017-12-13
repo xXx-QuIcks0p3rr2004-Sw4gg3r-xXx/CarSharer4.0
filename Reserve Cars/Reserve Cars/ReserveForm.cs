@@ -23,7 +23,7 @@ namespace Reserve_Cars
 
         private void Reservebutton_Click(object sender, EventArgs e)
         {
-            IdOfSelectedCar = CarGridView.CurrentCell.RowIndex;
+            IdOfSelectedCar = CarGridView.CurrentCell.RowIndex + 1;
             Database.SetReserved(IdOfSelectedCar);
         }
 
@@ -38,7 +38,7 @@ namespace Reserve_Cars
             CarGridView.AllowUserToAddRows = false;
             foreach (CarModel car in Database.GetCars())
             {
-                CarGridView.Rows.Add(car.Brand, car.Model, car.PS, car.Seats, car.Speed, car.Price, car.Fuel, car.Gearbox, car.Colour);
+                CarGridView.Rows.Add(car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel,  car.Colour);
                 i++;
                 if(i == 1) FreeCarsLabel.Text = i + " Free Car:";
                 else FreeCarsLabel.Text = i + " Free Cars:";

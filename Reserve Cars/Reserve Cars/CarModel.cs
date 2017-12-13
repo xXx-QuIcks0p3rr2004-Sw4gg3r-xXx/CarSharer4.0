@@ -43,8 +43,8 @@ namespace Reserve_Cars
             set { seats = value; }
         }
 
-        private string speed;
-        public string Speed
+        private int speed;
+        public int Speed
         {
             get { return speed; }
             set { speed = value; }

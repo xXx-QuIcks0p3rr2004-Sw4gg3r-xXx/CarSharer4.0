@@ -57,17 +57,18 @@ namespace Reserve_Cars
         }
         internal static void SetReserved(int ID)
         {
-            string UpdateReserved = "UPDATE Car SET Reserved = " + DateTime.Now.AddMinutes(20) + "Where ID = " + ID ;
-
             using (MySqlConnection mySqlConnection = new MySqlConnection(@"host=db4free.net;user=schoolproject;password=carsharing;database=carsharing4;port=3307"))
             {
                 try
                 {
                     mySqlConnection.Open();
 
-                    using (MySqlCommand mySqlCommand = new MySqlCommand(UpdateReserved))
+                    using (MySqlCommand mySqlCommand = new MySqlCommand("UPDATE Car SET Reserved = @reserved Where ID = @id", mySqlConnection))
                     {
-                        
+                        mySqlCommand.Parameters.AddWithValue("reserved", DateTime.Now.AddMinutes(20).ToString("yyyy.MM.dd HH:mm:ss"));
+                        mySqlCommand.Parameters.AddWithValue("id", ID);
+                        mySqlCommand.Prepare();
+                        mySqlCommand.ExecuteScalar();
                     }
                 }
                 catch (Exception)
