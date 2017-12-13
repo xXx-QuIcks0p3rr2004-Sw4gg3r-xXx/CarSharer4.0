@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using MetroFramework;
+using MySql.Data.MySqlClient;
 
 namespace CarSharer
 {

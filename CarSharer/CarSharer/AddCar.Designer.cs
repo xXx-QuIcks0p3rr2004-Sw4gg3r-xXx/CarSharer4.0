@@ -68,6 +68,34 @@
             // brandComboBox
             // 
             this.brandComboBox.FormattingEnabled = true;
+            this.brandComboBox.Items.AddRange(new object[] {
+            "Alfa Romeo",
+            "Abarth",
+            "Aston Martin",
+            "Audi",
+            "BMW",
+            "Citroen",
+            "Fiat",
+            "Ford",
+            "Jaguar",
+            "Jeep",
+            "Land Rover",
+            "Nissan",
+            "Maserati",
+            "Mercedes-Benz",
+            "MINI",
+            "Opel",
+            "Peugeot",
+            "Porsche",
+            "Renault",
+            "Seat",
+            "Skoda",
+            "Smart",
+            "Subaru",
+            "Tesla",
+            "Toyota",
+            "Volvo",
+            "VW"});
             this.brandComboBox.Location = new System.Drawing.Point(95, 66);
             this.brandComboBox.Name = "brandComboBox";
             this.brandComboBox.Size = new System.Drawing.Size(121, 21);
