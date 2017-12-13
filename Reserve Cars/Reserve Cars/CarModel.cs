@@ -92,6 +92,13 @@ namespace Reserve_Cars
             set { maxspeed = value; }
         }
 
+        private DateTime date;
+        public DateTime Date
+        {
+            get { return date; }
+            set { date = value; }
+        }
+
         public CarModel()
         {
 

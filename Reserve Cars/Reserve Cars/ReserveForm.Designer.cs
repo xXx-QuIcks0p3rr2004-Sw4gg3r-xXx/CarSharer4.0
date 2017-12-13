@@ -42,6 +42,7 @@
             this.CarGearbox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarColour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FreeCarsLabel = new System.Windows.Forms.Label();
+            this.CarCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,11 +160,23 @@
             this.FreeCarsLabel.TabIndex = 6;
             this.FreeCarsLabel.Text = "Free Cars:";
             // 
+            // CarCheckBox
+            // 
+            this.CarCheckBox.AutoSize = true;
+            this.CarCheckBox.Location = new System.Drawing.Point(142, 299);
+            this.CarCheckBox.Name = "CarCheckBox";
+            this.CarCheckBox.Size = new System.Drawing.Size(121, 17);
+            this.CarCheckBox.TabIndex = 7;
+            this.CarCheckBox.Text = "Show reserved Cars";
+            this.CarCheckBox.UseVisualStyleBackColor = true;
+            this.CarCheckBox.CheckedChanged += new System.EventHandler(this.CarCheckBox_CheckedChanged);
+            // 
             // CarReserver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 330);
+            this.Controls.Add(this.CarCheckBox);
             this.Controls.Add(this.FreeCarsLabel);
             this.Controls.Add(this.CarGridView);
             this.Controls.Add(this.Reservebutton);
@@ -194,6 +207,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CarGearbox;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarColour;
         private System.Windows.Forms.Label FreeCarsLabel;
+        private System.Windows.Forms.CheckBox CarCheckBox;
     }
 }
 

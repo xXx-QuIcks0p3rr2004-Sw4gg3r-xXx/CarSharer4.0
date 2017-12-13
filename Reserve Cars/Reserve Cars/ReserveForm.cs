@@ -15,6 +15,9 @@ namespace Reserve_Cars
     {
         int i = 0;
         int IdOfSelectedCar = 0;
+        DateTime Date1 = DateTime.Now;
+        DateTime Date2;
+        DateTime DateZero = Convert.ToDateTime(null);
 
         public CarReserver()
         {
@@ -36,14 +39,36 @@ namespace Reserve_Cars
         {
             CarGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CarGridView.AllowUserToAddRows = false;
+            
             foreach (CarModel car in Database.GetCars())
             {
-                CarGridView.Rows.Add(car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel,  car.Colour);
-                i++;
-                if(i == 1) FreeCarsLabel.Text = i + " Free Car:";
-                else FreeCarsLabel.Text = i + " Free Cars:";
+                if (DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked)
+                {
+                    CarGridView.Rows.Add(car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
+                    i++;
+                    if (i == 1) FreeCarsLabel.Text = i + " Free Car:";
+                    else FreeCarsLabel.Text = i + " Free Cars:";
+                }
             }
 
+        }
+
+        private void CarCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CarCheckBox.Checked == true)
+            {
+                foreach (CarModel car in Database.GetCars())
+                {
+                    if (DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked)
+                    {
+                        CarGridView.Rows.Add(car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
+                        i++;
+                        if (i == 1) FreeCarsLabel.Text = i + " Free Car:";
+                        else FreeCarsLabel.Text = i + " Free Cars:";
+                    }
+                }
+            }
+            
         }
     }
 }
