@@ -14,9 +14,9 @@ namespace Reserve_Cars
     public partial class CarReserver : Form
     {
         int i = 0;
-        int IdOfSelectedCar = 0;
+        int SelectedCar = 0;
+        int SelectedCarId = 0;
         DateTime Date1 = DateTime.Now;
-        DateTime Date2;
         DateTime DateZero = Convert.ToDateTime(null);
 
         public CarReserver()
@@ -26,13 +26,27 @@ namespace Reserve_Cars
 
         private void Reservebutton_Click(object sender, EventArgs e)
         {
-            IdOfSelectedCar = CarGridView.CurrentCell.RowIndex + 1;
-            Database.SetReserved(IdOfSelectedCar);
+            SelectedCar = CarGridView.CurrentCell.RowIndex + 1;
+            SelectedCarId = Convert.ToInt16(CarGridView.Rows[CarGridView.CurrentCell.RowIndex].Cells["CarId"].Value);
+            
+            Database.SetReserved(SelectedCarId);
+            CarGridView.Rows.Clear();
+            i = 0;
+            foreach (CarModel car in Database.GetCars())
+            {
+                if (DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked)
+                {
+                    CarGridView.Rows.Add(car.Id, car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
+                    i++;
+                    if (i == 1) FreeCarsLabel.Text = i + " Free Car:";
+                    else FreeCarsLabel.Text = i + " Free Cars:";
+                }
+
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void CarReserver_Load(object sender, EventArgs e)
@@ -44,7 +58,7 @@ namespace Reserve_Cars
             {
                 if (DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked)
                 {
-                    CarGridView.Rows.Add(car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
+                    CarGridView.Rows.Add(car.Id, car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
                     i++;
                     if (i == 1) FreeCarsLabel.Text = i + " Free Car:";
                     else FreeCarsLabel.Text = i + " Free Cars:";
@@ -59,11 +73,12 @@ namespace Reserve_Cars
             {
                 CarGridView.Rows.Clear();
                 i = 0;
+                Reservebutton.Enabled = false;
                 foreach (CarModel car in Database.GetCars())
                 {
                     if (DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked)
                     {
-                        CarGridView.Rows.Add(car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
+                        CarGridView.Rows.Add(car.Id, car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
                         i++;
                         if (i == 1) FreeCarsLabel.Text = i + " Car:";
                         else FreeCarsLabel.Text = i + " Cars:";
@@ -75,11 +90,12 @@ namespace Reserve_Cars
             {
                 CarGridView.Rows.Clear();
                 i = 0;
+                Reservebutton.Enabled = true;
                 foreach (CarModel car in Database.GetCars())
                 {
                     if (DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked)
                     {
-                        CarGridView.Rows.Add(car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
+                        CarGridView.Rows.Add(car.Id, car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
                         i++;
                         if (i == 1) FreeCarsLabel.Text = i + " Free Car:";
                         else FreeCarsLabel.Text = i + " Free Cars:";
@@ -88,6 +104,11 @@ namespace Reserve_Cars
                 }
             }
             
+        }
+
+        private void Exitbutton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
