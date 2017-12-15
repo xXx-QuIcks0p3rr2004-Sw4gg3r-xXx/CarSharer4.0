@@ -51,6 +51,7 @@ namespace Reserve_Cars
         {
             CarGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CarGridView.AllowUserToAddRows = false;
+            BlockButton.Enabled = false;
             
             foreach (CarModel car in Database.GetCars())
             {
@@ -113,6 +114,31 @@ namespace Reserve_Cars
             SelectedCarId = Convert.ToInt16(CarGridView.Rows[CarGridView.CurrentCell.RowIndex].Cells["CarId"].Value);
 
             Database.SetStatus(SelectedCarId, "Riding");
+            CarGridView.Rows.Clear();
+            i = 0;
+            foreach (CarModel car in Database.GetCars())
+            {
+                if ((DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked) && car.Status == "Free")
+                {
+                    CarGridView.Rows.Add(car.Id, car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
+
+                }
+
+            }
+        }
+
+        private void AdminCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AdminCheckBox.Checked == true) BlockButton.Enabled = true;
+            else BlockButton.Enabled = false;
+        }
+
+        private void BlockButton_Click(object sender, EventArgs e)
+        {
+            SelectedCar = CarGridView.CurrentCell.RowIndex + 1;
+            SelectedCarId = Convert.ToInt16(CarGridView.Rows[CarGridView.CurrentCell.RowIndex].Cells["CarId"].Value);
+
+            Database.SetStatus(SelectedCarId, "Blocked");
             CarGridView.Rows.Clear();
             i = 0;
             foreach (CarModel car in Database.GetCars())

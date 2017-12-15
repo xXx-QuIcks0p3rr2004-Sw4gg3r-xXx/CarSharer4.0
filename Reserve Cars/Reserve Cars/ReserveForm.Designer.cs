@@ -43,6 +43,8 @@
             this.CarColour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarCheckBox = new System.Windows.Forms.CheckBox();
             this.DriveButton = new System.Windows.Forms.Button();
+            this.AdminCheckBox = new System.Windows.Forms.CheckBox();
+            this.BlockButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,11 +176,34 @@
             this.DriveButton.UseVisualStyleBackColor = true;
             this.DriveButton.Click += new System.EventHandler(this.DriveButton_Click);
             // 
+            // AdminCheckBox
+            // 
+            this.AdminCheckBox.AutoSize = true;
+            this.AdminCheckBox.Location = new System.Drawing.Point(474, 301);
+            this.AdminCheckBox.Name = "AdminCheckBox";
+            this.AdminCheckBox.Size = new System.Drawing.Size(96, 17);
+            this.AdminCheckBox.TabIndex = 9;
+            this.AdminCheckBox.Text = "ADMIN-Modus";
+            this.AdminCheckBox.UseVisualStyleBackColor = true;
+            this.AdminCheckBox.CheckedChanged += new System.EventHandler(this.AdminCheckBox_CheckedChanged);
+            // 
+            // BlockButton
+            // 
+            this.BlockButton.Location = new System.Drawing.Point(576, 295);
+            this.BlockButton.Name = "BlockButton";
+            this.BlockButton.Size = new System.Drawing.Size(104, 23);
+            this.BlockButton.TabIndex = 10;
+            this.BlockButton.Text = "Block selected Car";
+            this.BlockButton.UseVisualStyleBackColor = true;
+            this.BlockButton.Click += new System.EventHandler(this.BlockButton_Click);
+            // 
             // CarReserver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 330);
+            this.Controls.Add(this.BlockButton);
+            this.Controls.Add(this.AdminCheckBox);
             this.Controls.Add(this.DriveButton);
             this.Controls.Add(this.CarCheckBox);
             this.Controls.Add(this.CarGridView);
@@ -209,6 +234,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CarGearbox;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarColour;
         private System.Windows.Forms.Button DriveButton;
+        private System.Windows.Forms.CheckBox AdminCheckBox;
+        private System.Windows.Forms.Button BlockButton;
     }
 }
 
