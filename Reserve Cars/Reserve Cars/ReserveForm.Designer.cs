@@ -41,7 +41,6 @@
             this.CarFuel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarGearbox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarColour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FreeCarsLabel = new System.Windows.Forms.Label();
             this.CarCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).BeginInit();
             this.SuspendLayout();
@@ -83,12 +82,12 @@
             this.CarFuel,
             this.CarGearbox,
             this.CarColour});
-            this.CarGridView.Location = new System.Drawing.Point(12, 25);
+            this.CarGridView.Location = new System.Drawing.Point(12, 12);
             this.CarGridView.MultiSelect = false;
             this.CarGridView.Name = "CarGridView";
             this.CarGridView.ReadOnly = true;
             this.CarGridView.RowHeadersVisible = false;
-            this.CarGridView.Size = new System.Drawing.Size(903, 264);
+            this.CarGridView.Size = new System.Drawing.Size(903, 277);
             this.CarGridView.TabIndex = 5;
             this.CarGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -153,15 +152,6 @@
             this.CarColour.Name = "CarColour";
             this.CarColour.ReadOnly = true;
             // 
-            // FreeCarsLabel
-            // 
-            this.FreeCarsLabel.AutoSize = true;
-            this.FreeCarsLabel.Location = new System.Drawing.Point(12, 9);
-            this.FreeCarsLabel.Name = "FreeCarsLabel";
-            this.FreeCarsLabel.Size = new System.Drawing.Size(55, 13);
-            this.FreeCarsLabel.TabIndex = 6;
-            this.FreeCarsLabel.Text = "Free Cars:";
-            // 
             // CarCheckBox
             // 
             this.CarCheckBox.AutoSize = true;
@@ -179,7 +169,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 330);
             this.Controls.Add(this.CarCheckBox);
-            this.Controls.Add(this.FreeCarsLabel);
             this.Controls.Add(this.CarGridView);
             this.Controls.Add(this.Reservebutton);
             this.Controls.Add(this.Exitbutton);
@@ -196,7 +185,6 @@
         private System.Windows.Forms.Button Exitbutton;
         private System.Windows.Forms.Button Reservebutton;
         private System.Windows.Forms.DataGridView CarGridView;
-        private System.Windows.Forms.Label FreeCarsLabel;
         private System.Windows.Forms.CheckBox CarCheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarId;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarBrand;
