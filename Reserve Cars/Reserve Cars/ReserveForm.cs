@@ -57,6 +57,24 @@ namespace Reserve_Cars
         {
             if (CarCheckBox.Checked == true)
             {
+                CarGridView.Rows.Clear();
+                i = 0;
+                foreach (CarModel car in Database.GetCars())
+                {
+                    if (DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked)
+                    {
+                        CarGridView.Rows.Add(car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
+                        i++;
+                        if (i == 1) FreeCarsLabel.Text = i + " Car:";
+                        else FreeCarsLabel.Text = i + " Cars:";
+                    }
+
+                }
+            }
+            else
+            {
+                CarGridView.Rows.Clear();
+                i = 0;
                 foreach (CarModel car in Database.GetCars())
                 {
                     if (DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked)
@@ -66,6 +84,7 @@ namespace Reserve_Cars
                         if (i == 1) FreeCarsLabel.Text = i + " Free Car:";
                         else FreeCarsLabel.Text = i + " Free Cars:";
                     }
+
                 }
             }
             

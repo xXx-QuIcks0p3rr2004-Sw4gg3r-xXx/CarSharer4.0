@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Savebutton = new System.Windows.Forms.Button();
             this.Exitbutton = new System.Windows.Forms.Button();
             this.Reservebutton = new System.Windows.Forms.Button();
             this.CarGridView = new System.Windows.Forms.DataGridView();
@@ -45,15 +44,6 @@
             this.CarCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Savebutton
-            // 
-            this.Savebutton.Location = new System.Drawing.Point(759, 295);
-            this.Savebutton.Name = "Savebutton";
-            this.Savebutton.Size = new System.Drawing.Size(75, 23);
-            this.Savebutton.TabIndex = 0;
-            this.Savebutton.Text = "Save";
-            this.Savebutton.UseVisualStyleBackColor = true;
             // 
             // Exitbutton
             // 
@@ -76,6 +66,8 @@
             // 
             // CarGridView
             // 
+            this.CarGridView.AllowUserToResizeColumns = false;
+            this.CarGridView.AllowUserToResizeRows = false;
             this.CarGridView.BackgroundColor = System.Drawing.Color.White;
             this.CarGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CarGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -181,7 +173,6 @@
             this.Controls.Add(this.CarGridView);
             this.Controls.Add(this.Reservebutton);
             this.Controls.Add(this.Exitbutton);
-            this.Controls.Add(this.Savebutton);
             this.Name = "CarReserver";
             this.Text = "CarReserver";
             this.Load += new System.EventHandler(this.CarReserver_Load);
@@ -192,8 +183,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Savebutton;
         private System.Windows.Forms.Button Exitbutton;
         private System.Windows.Forms.Button Reservebutton;
         private System.Windows.Forms.DataGridView CarGridView;
