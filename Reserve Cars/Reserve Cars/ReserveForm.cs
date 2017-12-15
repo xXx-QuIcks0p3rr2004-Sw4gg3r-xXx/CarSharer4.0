@@ -34,12 +34,10 @@ namespace Reserve_Cars
             i = 0;
             foreach (CarModel car in Database.GetCars())
             {
-                if (DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked)
+                if ((DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked) && car.Status == "Free")
                 {
                     CarGridView.Rows.Add(car.Id, car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
-                    i++;
-                    if (i == 1) FreeCarsLabel.Text = i + " Free Car:";
-                    else FreeCarsLabel.Text = i + " Free Cars:";
+                    
                 }
 
             }
@@ -56,12 +54,10 @@ namespace Reserve_Cars
             
             foreach (CarModel car in Database.GetCars())
             {
-                if (DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked)
+                if ((DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked) && car.Status == "Free")
                 {
                     CarGridView.Rows.Add(car.Id, car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
-                    i++;
-                    if (i == 1) FreeCarsLabel.Text = i + " Free Car:";
-                    else FreeCarsLabel.Text = i + " Free Cars:";
+                    
                 }
             }
 
@@ -76,12 +72,10 @@ namespace Reserve_Cars
                 Reservebutton.Enabled = false;
                 foreach (CarModel car in Database.GetCars())
                 {
-                    if (DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked)
+                    if ((DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked) && car.Status == "Free")
                     {
                         CarGridView.Rows.Add(car.Id, car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
-                        i++;
-                        if (i == 1) FreeCarsLabel.Text = i + " Car:";
-                        else FreeCarsLabel.Text = i + " Cars:";
+                        
                     }
 
                 }
@@ -93,12 +87,10 @@ namespace Reserve_Cars
                 Reservebutton.Enabled = true;
                 foreach (CarModel car in Database.GetCars())
                 {
-                    if (DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked)
+                    if ((DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked) && car.Status == "Free")
                     {
                         CarGridView.Rows.Add(car.Id, car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
-                        i++;
-                        if (i == 1) FreeCarsLabel.Text = i + " Free Car:";
-                        else FreeCarsLabel.Text = i + " Free Cars:";
+                        
                     }
 
                 }
@@ -108,7 +100,30 @@ namespace Reserve_Cars
 
         private void Exitbutton_Click(object sender, EventArgs e)
         {
+            foreach (CarModel car in Database.GetCars())
+            {
+                Database.SetStatus(car.Id, "Free");
+            }
             this.Close();
+        }
+
+        private void DriveButton_Click(object sender, EventArgs e)
+        {
+            SelectedCar = CarGridView.CurrentCell.RowIndex + 1;
+            SelectedCarId = Convert.ToInt16(CarGridView.Rows[CarGridView.CurrentCell.RowIndex].Cells["CarId"].Value);
+
+            Database.SetStatus(SelectedCarId, "Riding");
+            CarGridView.Rows.Clear();
+            i = 0;
+            foreach (CarModel car in Database.GetCars())
+            {
+                if ((DateTime.Compare(Date1, car.Date) > 0 || CarCheckBox.Checked) && car.Status == "Free")
+                {
+                    CarGridView.Rows.Add(car.Id, car.Brand, car.Model, car.PS, car.Seats, car.Maxspeed, car.Price, car.Gearbox, car.Fuel, car.Colour);
+
+                }
+
+            }
         }
     }
 }

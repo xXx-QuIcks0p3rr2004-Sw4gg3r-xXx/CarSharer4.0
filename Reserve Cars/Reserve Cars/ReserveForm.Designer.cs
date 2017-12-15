@@ -42,6 +42,7 @@
             this.CarGearbox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarColour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarCheckBox = new System.Windows.Forms.CheckBox();
+            this.DriveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,11 +164,22 @@
             this.CarCheckBox.UseVisualStyleBackColor = true;
             this.CarCheckBox.CheckedChanged += new System.EventHandler(this.CarCheckBox_CheckedChanged);
             // 
+            // DriveButton
+            // 
+            this.DriveButton.Location = new System.Drawing.Point(312, 295);
+            this.DriveButton.Name = "DriveButton";
+            this.DriveButton.Size = new System.Drawing.Size(105, 23);
+            this.DriveButton.TabIndex = 8;
+            this.DriveButton.Text = "Drive selected Car";
+            this.DriveButton.UseVisualStyleBackColor = true;
+            this.DriveButton.Click += new System.EventHandler(this.DriveButton_Click);
+            // 
             // CarReserver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 330);
+            this.Controls.Add(this.DriveButton);
             this.Controls.Add(this.CarCheckBox);
             this.Controls.Add(this.CarGridView);
             this.Controls.Add(this.Reservebutton);
@@ -196,6 +208,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CarFuel;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarGearbox;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarColour;
+        private System.Windows.Forms.Button DriveButton;
     }
 }
 

@@ -85,6 +85,9 @@ namespace Reserve_Cars
             set { colour = value; }
         }
 
+        private string status;
+        
+
         private int maxspeed;
         public int Maxspeed
         {
@@ -99,6 +102,11 @@ namespace Reserve_Cars
             set { date = value; }
         }
 
+        public string Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
         public CarModel()
         {
 

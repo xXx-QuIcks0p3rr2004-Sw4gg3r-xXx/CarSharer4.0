@@ -40,6 +40,7 @@ namespace Reserve_Cars
                                 Fuel = row.ItemArray[8].ToString(),
                                 Colour = row.ItemArray[9].ToString(),
                                 Date = Convert.ToDateTime(row.ItemArray[12]),
+                                Status = row.ItemArray[11].ToString(),
                             });
                         }
                     }
@@ -67,6 +68,34 @@ namespace Reserve_Cars
                     using (MySqlCommand mySqlCommand = new MySqlCommand("UPDATE Car SET Reserved = @reserved Where ID = @id", mySqlConnection))
                     {
                         mySqlCommand.Parameters.AddWithValue("reserved", DateTime.Now.AddMinutes(20).ToString("yyyy.MM.dd HH:mm:ss"));
+                        mySqlCommand.Parameters.AddWithValue("id", ID);
+                        mySqlCommand.Prepare();
+                        mySqlCommand.ExecuteScalar();
+                    }
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+                finally
+                {
+                    mySqlConnection.Close();
+                }
+            }
+            return;
+
+        }
+        internal static void SetStatus(int ID, string status)
+        {
+            using (MySqlConnection mySqlConnection = new MySqlConnection(@"host=db4free.net;user=schoolproject;password=carsharing;database=carsharing4;port=3307"))
+            {
+                try
+                {
+                    mySqlConnection.Open();
+
+                    using (MySqlCommand mySqlCommand = new MySqlCommand("UPDATE Car SET Status = @status Where ID = @id", mySqlConnection))
+                    {
+                        mySqlCommand.Parameters.AddWithValue("status", status);
                         mySqlCommand.Parameters.AddWithValue("id", ID);
                         mySqlCommand.Prepare();
                         mySqlCommand.ExecuteScalar();
