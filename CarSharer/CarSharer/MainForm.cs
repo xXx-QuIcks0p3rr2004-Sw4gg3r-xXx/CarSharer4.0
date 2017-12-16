@@ -25,7 +25,36 @@ namespace CarSharer
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            carListBox.DisplayMember = "DisplayName";
             // select all Items from the database and list  them in cars
+            using (MySqlConnection con = new MySqlConnection(@"host=mysql8.db4free.net;user=schoolproject;password=carsharing;database=carsharing4;port=3307"))
+            {
+                try
+                {
+                    con.Open();
+                    using(MySqlCommand command = new MySqlCommand("SELECT * FROM Car", con))
+                    {
+                        using(MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Car car = new Car((int)reader["ID"], (string)reader["Brand"], (string)reader["Model"], (int)reader["PS"], (int)reader["Seats"], 
+                                    (int)reader["Price"], (string)reader["Gearbox"], (string)reader["Fuel"], (string)reader["Status"], false);
+                                Cars.Add(car);
+                            }
+                        }
+                    }
+                    carListBox.DataSource = Cars;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Ein Fehler ist aufgetreten: " + ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
         }
 
         /// <summary>
@@ -113,24 +142,6 @@ namespace CarSharer
         private void BearbeitenTile_Click(object sender, EventArgs e)
         {
             // should update a car from the database and refresh the carlistbox (update set)
-        }
-
-        /// <summary>
-        /// Shows the attibutes of the selected Item (or Car).
-        /// </summary>
-        private void SpieleListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (carListBox.SelectedIndex != -1)
-            {
-                modelLabel.Text = Cars[carListBox.SelectedIndex].model; // you could also do this with carListBox.Item.xxx but i would have had to change more of my "paste"
-                brandLabel.Text = Cars[carListBox.SelectedIndex].brand;
-                powerLabel.Text = Cars[carListBox.SelectedIndex].power.ToString();
-                seatsLabel.Text = Cars[carListBox.SelectedIndex].seats.ToString();
-                gearboxLabel.Text = Cars[carListBox.SelectedIndex].gearbox;
-                fuelLabel.Text = Cars[carListBox.SelectedIndex].fuel;
-                statusLabel.Text = Cars[carListBox.SelectedIndex].status;
-                priceLabel.Text = Cars[carListBox.SelectedIndex].price.ToString();
-            }
         }
 
         private void StartenTile_Click(object sender, EventArgs e)
@@ -405,6 +416,22 @@ namespace CarSharer
                         powerTextBox.Text = string.Empty;
                     }
                 }
+            }
+        }
+
+        private void carListBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(carListBox.SelectedItem != null)
+            {
+                Car car = (Car)carListBox.SelectedItem;
+                showModelTextLabel.Text = car.model;
+                showBrandTextLabel.Text = car.brand;
+                showPSTextLabel.Text = car.power + " PS";
+                showSeatsTextLabel.Text = car.seats.ToString();
+                showGearboxTextLabel.Text = car.gearbox;
+                showFuelTextLabel.Text = car.fuel + " Liter";
+                showStatusTextLabel.Text = car.status;
+                showPriceTextLabel.Text = car.price + " €";
             }
         }
     }
