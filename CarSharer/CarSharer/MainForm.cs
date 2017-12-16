@@ -7,6 +7,7 @@ using System.Linq;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using MetroFramework;
+using MySql.Data.MySqlClient;
 
 namespace CarSharer
 {
@@ -58,15 +59,55 @@ namespace CarSharer
             metroStyleManager1.Style = (MetroColorStyle)Convert.ToInt32(farbeComboBox.SelectedIndex);
             Invalidate();
         }
-
-        private void HinzufügenTile_Click(object sender, EventArgs e)
+        private void addTile_Click(object sender, EventArgs e)
         {
             // should add a car to the database and refresh the carlistbox (insert into)
+            if (!(string.IsNullOrEmpty(brandTextBox.Text) && string.IsNullOrEmpty(modelTextBox.Text) && string.IsNullOrEmpty(priceTextBox.Text) 
+                && string.IsNullOrEmpty(gearboxTextBox.Text) && string.IsNullOrEmpty(fuelTextBox.Text) && string.IsNullOrEmpty(colourTextBox.Text) 
+                && string.IsNullOrEmpty(licenseclassTextBox.Text)) && string.IsNullOrEmpty(powerTextBox.Text) && string.IsNullOrEmpty(seatsTextBox.Text)
+                && string.IsNullOrEmpty(maxSpeedTextBox.Text))
+            {
+                DbController.InsertCar(new Car(0, brandTextBox.Text, modelTextBox.Text, Int32.Parse(powerTextBox.Text), Int32.Parse(seatsTextBox.Text), 
+                    Int32.Parse(maxSpeedTextBox.Text), Int32.Parse(priceTextBox.Text), gearboxTextBox.Text, fuelTextBox.Text, colourTextBox.Text, 
+                    licenseclassTextBox.Text, statusTextBox.Text, false) , this);
+            }
+            else MetroMessageBox.Show(this,"More details, please.");
         }
-
         private void EntfernenTile_Click(object sender, EventArgs e)
         {
-            // should delete a car from the database and refresh the carlistbox (delete from)
+            if (carListBox.SelectedItem != null)
+            {
+                using (MySqlConnection con = new MySqlConnection(@"host=mysql8.db4free.net;user=schoolproject;password=carsharing;database=carsharing4;port=3307"))
+                {
+                    try
+                    {
+                        // open connection to database 
+                        con.Open();
+                        Car car = (Car)carListBox.SelectedItem;
+                        using (MySqlCommand command = new MySqlCommand("DELETE FROM Car WHERE ID = " + car.id, con))
+                        {
+                            command.ExecuteNonQuery();
+                            Cars.Remove(car);
+                            carListBox.DataSource = Cars;
+                            carListBox.SelectedItem = null;
+                            MetroMessageBox.Show(this, "Car (#" + car.id + ") deleted.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MetroMessageBox.Show(this, "Need more details. " + ex.Message);
+                    }
+                    finally
+                    {
+                        // close connection to database
+                        con.Close();
+                    }
+                }
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "You have to select a Car!");
+            }
         }
 
         private void BearbeitenTile_Click(object sender, EventArgs e)

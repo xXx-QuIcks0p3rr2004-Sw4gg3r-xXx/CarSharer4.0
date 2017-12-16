@@ -61,26 +61,32 @@
             this.leitmotivComboBox = new MetroFramework.Controls.MetroComboBox();
             this.leitmotivLabel = new MetroFramework.Controls.MetroLabel();
             this.addVehicleTabPage = new MetroFramework.Controls.MetroTabPage();
+            this.licenseclassTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.licenseclassTextLabel = new MetroFramework.Controls.MetroLabel();
+            this.colourTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.colourLabel = new MetroFramework.Controls.MetroLabel();
             this.priceTextBox = new MetroFramework.Controls.MetroTextBox();
             this.statusTextBox = new MetroFramework.Controls.MetroTextBox();
             this.fuelTextBox = new MetroFramework.Controls.MetroTextBox();
             this.gearboxTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.modelTextBox = new MetroFramework.Controls.MetroTextBox();
             this.brandTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.modelTextBox = new MetroFramework.Controls.MetroTextBox();
             this.seatsTextBox = new MetroFramework.Controls.MetroTextBox();
             this.powerTextBox = new MetroFramework.Controls.MetroTextBox();
             this.bearbeitenTile = new MetroFramework.Controls.MetroTile();
             this.entfernenTile = new MetroFramework.Controls.MetroTile();
-            this.hinzufügenTile = new MetroFramework.Controls.MetroTile();
+            this.addTile = new MetroFramework.Controls.MetroTile();
             this.priceTextLabel1 = new MetroFramework.Controls.MetroLabel();
             this.gearboxTextLabel1 = new MetroFramework.Controls.MetroLabel();
             this.fuelTextLabel1 = new MetroFramework.Controls.MetroLabel();
             this.statusTextLabel1 = new MetroFramework.Controls.MetroLabel();
             this.seatsTextLabel1 = new MetroFramework.Controls.MetroLabel();
             this.powerTextLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.brandTextLabel1 = new MetroFramework.Controls.MetroLabel();
             this.modelTextLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.brandTextLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.maxSpeedLabel = new MetroFramework.Controls.MetroLabel();
+            this.maxSpeedTextBox = new MetroFramework.Controls.MetroTextBox();
             this.tabControl.SuspendLayout();
             this.vehicleTabPage.SuspendLayout();
             this.optionTabPage.SuspendLayout();
@@ -96,8 +102,8 @@
             this.tabControl.Location = new System.Drawing.Point(0, 83);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 2;
-            this.tabControl.Size = new System.Drawing.Size(895, 345);
-            this.tabControl.TabIndex = 1;
+            this.tabControl.Size = new System.Drawing.Size(895, 369);
+            this.tabControl.TabIndex = 0;
             this.tabControl.UseSelectable = true;
             // 
             // vehicleTabPage
@@ -129,7 +135,7 @@
             this.vehicleTabPage.HorizontalScrollbarSize = 10;
             this.vehicleTabPage.Location = new System.Drawing.Point(4, 38);
             this.vehicleTabPage.Name = "vehicleTabPage";
-            this.vehicleTabPage.Size = new System.Drawing.Size(887, 303);
+            this.vehicleTabPage.Size = new System.Drawing.Size(887, 327);
             this.vehicleTabPage.TabIndex = 4;
             this.vehicleTabPage.Text = "Fahrzeuge";
             this.vehicleTabPage.VerticalScrollbarBarColor = true;
@@ -341,7 +347,7 @@
             // brandTextLabel
             // 
             this.brandTextLabel.AutoSize = true;
-            this.brandTextLabel.Location = new System.Drawing.Point(295, 52);
+            this.brandTextLabel.Location = new System.Drawing.Point(298, 23);
             this.brandTextLabel.Name = "brandTextLabel";
             this.brandTextLabel.Size = new System.Drawing.Size(46, 19);
             this.brandTextLabel.TabIndex = 11;
@@ -351,7 +357,7 @@
             // 
             this.modelTextLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.modelTextLabel.AutoSize = true;
-            this.modelTextLabel.Location = new System.Drawing.Point(295, 23);
+            this.modelTextLabel.Location = new System.Drawing.Point(296, 52);
             this.modelTextLabel.Name = "modelTextLabel";
             this.modelTextLabel.Size = new System.Drawing.Size(50, 19);
             this.modelTextLabel.TabIndex = 10;
@@ -371,7 +377,7 @@
             this.optionTabPage.HorizontalScrollbarSize = 10;
             this.optionTabPage.Location = new System.Drawing.Point(4, 38);
             this.optionTabPage.Name = "optionTabPage";
-            this.optionTabPage.Size = new System.Drawing.Size(887, 303);
+            this.optionTabPage.Size = new System.Drawing.Size(887, 327);
             this.optionTabPage.TabIndex = 6;
             this.optionTabPage.Text = "Optionen";
             this.optionTabPage.VerticalScrollbarBarColor = true;
@@ -463,36 +469,120 @@
             // 
             // addVehicleTabPage
             // 
+            this.addVehicleTabPage.Controls.Add(this.maxSpeedTextBox);
+            this.addVehicleTabPage.Controls.Add(this.maxSpeedLabel);
+            this.addVehicleTabPage.Controls.Add(this.licenseclassTextBox);
+            this.addVehicleTabPage.Controls.Add(this.licenseclassTextLabel);
+            this.addVehicleTabPage.Controls.Add(this.colourTextBox);
+            this.addVehicleTabPage.Controls.Add(this.colourLabel);
             this.addVehicleTabPage.Controls.Add(this.priceTextBox);
             this.addVehicleTabPage.Controls.Add(this.statusTextBox);
             this.addVehicleTabPage.Controls.Add(this.fuelTextBox);
             this.addVehicleTabPage.Controls.Add(this.gearboxTextBox);
-            this.addVehicleTabPage.Controls.Add(this.modelTextBox);
             this.addVehicleTabPage.Controls.Add(this.brandTextBox);
+            this.addVehicleTabPage.Controls.Add(this.modelTextBox);
             this.addVehicleTabPage.Controls.Add(this.seatsTextBox);
             this.addVehicleTabPage.Controls.Add(this.powerTextBox);
             this.addVehicleTabPage.Controls.Add(this.bearbeitenTile);
             this.addVehicleTabPage.Controls.Add(this.entfernenTile);
-            this.addVehicleTabPage.Controls.Add(this.hinzufügenTile);
+            this.addVehicleTabPage.Controls.Add(this.addTile);
             this.addVehicleTabPage.Controls.Add(this.priceTextLabel1);
             this.addVehicleTabPage.Controls.Add(this.gearboxTextLabel1);
             this.addVehicleTabPage.Controls.Add(this.fuelTextLabel1);
             this.addVehicleTabPage.Controls.Add(this.statusTextLabel1);
             this.addVehicleTabPage.Controls.Add(this.seatsTextLabel1);
             this.addVehicleTabPage.Controls.Add(this.powerTextLabel1);
-            this.addVehicleTabPage.Controls.Add(this.brandTextLabel1);
             this.addVehicleTabPage.Controls.Add(this.modelTextLabel1);
+            this.addVehicleTabPage.Controls.Add(this.brandTextLabel1);
             this.addVehicleTabPage.HorizontalScrollbarBarColor = true;
             this.addVehicleTabPage.HorizontalScrollbarHighlightOnWheel = false;
             this.addVehicleTabPage.HorizontalScrollbarSize = 10;
             this.addVehicleTabPage.Location = new System.Drawing.Point(4, 38);
             this.addVehicleTabPage.Name = "addVehicleTabPage";
-            this.addVehicleTabPage.Size = new System.Drawing.Size(887, 303);
+            this.addVehicleTabPage.Size = new System.Drawing.Size(887, 327);
             this.addVehicleTabPage.TabIndex = 7;
-            this.addVehicleTabPage.Text = "Farzeuge hinzufügen";
+            this.addVehicleTabPage.Text = "Add Car";
             this.addVehicleTabPage.VerticalScrollbarBarColor = true;
             this.addVehicleTabPage.VerticalScrollbarHighlightOnWheel = false;
             this.addVehicleTabPage.VerticalScrollbarSize = 10;
+            // 
+            // licenseclassTextBox
+            // 
+            // 
+            // 
+            // 
+            this.licenseclassTextBox.CustomButton.Image = null;
+            this.licenseclassTextBox.CustomButton.Location = new System.Drawing.Point(96, 1);
+            this.licenseclassTextBox.CustomButton.Name = "";
+            this.licenseclassTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.licenseclassTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.licenseclassTextBox.CustomButton.TabIndex = 1;
+            this.licenseclassTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.licenseclassTextBox.CustomButton.UseSelectable = true;
+            this.licenseclassTextBox.CustomButton.Visible = false;
+            this.licenseclassTextBox.Lines = new string[0];
+            this.licenseclassTextBox.Location = new System.Drawing.Point(144, 239);
+            this.licenseclassTextBox.MaxLength = 32767;
+            this.licenseclassTextBox.Name = "licenseclassTextBox";
+            this.licenseclassTextBox.PasswordChar = '\0';
+            this.licenseclassTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.licenseclassTextBox.SelectedText = "";
+            this.licenseclassTextBox.SelectionLength = 0;
+            this.licenseclassTextBox.SelectionStart = 0;
+            this.licenseclassTextBox.ShortcutsEnabled = true;
+            this.licenseclassTextBox.Size = new System.Drawing.Size(118, 23);
+            this.licenseclassTextBox.TabIndex = 8;
+            this.licenseclassTextBox.UseSelectable = true;
+            this.licenseclassTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.licenseclassTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // licenseclassTextLabel
+            // 
+            this.licenseclassTextLabel.AutoSize = true;
+            this.licenseclassTextLabel.Location = new System.Drawing.Point(19, 243);
+            this.licenseclassTextLabel.Name = "licenseclassTextLabel";
+            this.licenseclassTextLabel.Size = new System.Drawing.Size(76, 19);
+            this.licenseclassTextLabel.TabIndex = 45;
+            this.licenseclassTextLabel.Text = "Licenseclass";
+            // 
+            // colourTextBox
+            // 
+            // 
+            // 
+            // 
+            this.colourTextBox.CustomButton.Image = null;
+            this.colourTextBox.CustomButton.Location = new System.Drawing.Point(96, 1);
+            this.colourTextBox.CustomButton.Name = "";
+            this.colourTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.colourTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.colourTextBox.CustomButton.TabIndex = 1;
+            this.colourTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.colourTextBox.CustomButton.UseSelectable = true;
+            this.colourTextBox.CustomButton.Visible = false;
+            this.colourTextBox.Lines = new string[0];
+            this.colourTextBox.Location = new System.Drawing.Point(144, 210);
+            this.colourTextBox.MaxLength = 32767;
+            this.colourTextBox.Name = "colourTextBox";
+            this.colourTextBox.PasswordChar = '\0';
+            this.colourTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.colourTextBox.SelectedText = "";
+            this.colourTextBox.SelectionLength = 0;
+            this.colourTextBox.SelectionStart = 0;
+            this.colourTextBox.ShortcutsEnabled = true;
+            this.colourTextBox.Size = new System.Drawing.Size(118, 23);
+            this.colourTextBox.TabIndex = 7;
+            this.colourTextBox.UseSelectable = true;
+            this.colourTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.colourTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // colourLabel
+            // 
+            this.colourLabel.AutoSize = true;
+            this.colourLabel.Location = new System.Drawing.Point(19, 214);
+            this.colourLabel.Name = "colourLabel";
+            this.colourLabel.Size = new System.Drawing.Size(49, 19);
+            this.colourLabel.TabIndex = 43;
+            this.colourLabel.Text = "Colour";
             // 
             // priceTextBox
             // 
@@ -509,7 +599,7 @@
             this.priceTextBox.CustomButton.UseSelectable = true;
             this.priceTextBox.CustomButton.Visible = false;
             this.priceTextBox.Lines = new string[0];
-            this.priceTextBox.Location = new System.Drawing.Point(144, 239);
+            this.priceTextBox.Location = new System.Drawing.Point(144, 302);
             this.priceTextBox.MaxLength = 32767;
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.PasswordChar = '\0';
@@ -519,7 +609,7 @@
             this.priceTextBox.SelectionStart = 0;
             this.priceTextBox.ShortcutsEnabled = true;
             this.priceTextBox.Size = new System.Drawing.Size(118, 23);
-            this.priceTextBox.TabIndex = 42;
+            this.priceTextBox.TabIndex = 10;
             this.priceTextBox.UseSelectable = true;
             this.priceTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.priceTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -540,7 +630,7 @@
             this.statusTextBox.CustomButton.UseSelectable = true;
             this.statusTextBox.CustomButton.Visible = false;
             this.statusTextBox.Lines = new string[0];
-            this.statusTextBox.Location = new System.Drawing.Point(144, 210);
+            this.statusTextBox.Location = new System.Drawing.Point(144, 273);
             this.statusTextBox.MaxLength = 32767;
             this.statusTextBox.Name = "statusTextBox";
             this.statusTextBox.PasswordChar = '\0';
@@ -550,7 +640,7 @@
             this.statusTextBox.SelectionStart = 0;
             this.statusTextBox.ShortcutsEnabled = true;
             this.statusTextBox.Size = new System.Drawing.Size(118, 23);
-            this.statusTextBox.TabIndex = 41;
+            this.statusTextBox.TabIndex = 9;
             this.statusTextBox.UseSelectable = true;
             this.statusTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.statusTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -570,7 +660,7 @@
             this.fuelTextBox.CustomButton.UseSelectable = true;
             this.fuelTextBox.CustomButton.Visible = false;
             this.fuelTextBox.Lines = new string[0];
-            this.fuelTextBox.Location = new System.Drawing.Point(144, 162);
+            this.fuelTextBox.Location = new System.Drawing.Point(144, 181);
             this.fuelTextBox.MaxLength = 32767;
             this.fuelTextBox.Name = "fuelTextBox";
             this.fuelTextBox.PasswordChar = '\0';
@@ -580,7 +670,7 @@
             this.fuelTextBox.SelectionStart = 0;
             this.fuelTextBox.ShortcutsEnabled = true;
             this.fuelTextBox.Size = new System.Drawing.Size(118, 23);
-            this.fuelTextBox.TabIndex = 40;
+            this.fuelTextBox.TabIndex = 6;
             this.fuelTextBox.UseSelectable = true;
             this.fuelTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.fuelTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -600,7 +690,7 @@
             this.gearboxTextBox.CustomButton.UseSelectable = true;
             this.gearboxTextBox.CustomButton.Visible = false;
             this.gearboxTextBox.Lines = new string[0];
-            this.gearboxTextBox.Location = new System.Drawing.Point(144, 133);
+            this.gearboxTextBox.Location = new System.Drawing.Point(144, 152);
             this.gearboxTextBox.MaxLength = 32767;
             this.gearboxTextBox.Name = "gearboxTextBox";
             this.gearboxTextBox.PasswordChar = '\0';
@@ -610,40 +700,10 @@
             this.gearboxTextBox.SelectionStart = 0;
             this.gearboxTextBox.ShortcutsEnabled = true;
             this.gearboxTextBox.Size = new System.Drawing.Size(118, 23);
-            this.gearboxTextBox.TabIndex = 39;
+            this.gearboxTextBox.TabIndex = 5;
             this.gearboxTextBox.UseSelectable = true;
             this.gearboxTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.gearboxTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // modelTextBox
-            // 
-            // 
-            // 
-            // 
-            this.modelTextBox.CustomButton.Image = null;
-            this.modelTextBox.CustomButton.Location = new System.Drawing.Point(96, 1);
-            this.modelTextBox.CustomButton.Name = "";
-            this.modelTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.modelTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.modelTextBox.CustomButton.TabIndex = 1;
-            this.modelTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.modelTextBox.CustomButton.UseSelectable = true;
-            this.modelTextBox.CustomButton.Visible = false;
-            this.modelTextBox.Lines = new string[0];
-            this.modelTextBox.Location = new System.Drawing.Point(144, 17);
-            this.modelTextBox.MaxLength = 32767;
-            this.modelTextBox.Name = "modelTextBox";
-            this.modelTextBox.PasswordChar = '\0';
-            this.modelTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.modelTextBox.SelectedText = "";
-            this.modelTextBox.SelectionLength = 0;
-            this.modelTextBox.SelectionStart = 0;
-            this.modelTextBox.ShortcutsEnabled = true;
-            this.modelTextBox.Size = new System.Drawing.Size(118, 23);
-            this.modelTextBox.TabIndex = 38;
-            this.modelTextBox.UseSelectable = true;
-            this.modelTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.modelTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // brandTextBox
             // 
@@ -660,7 +720,7 @@
             this.brandTextBox.CustomButton.UseSelectable = true;
             this.brandTextBox.CustomButton.Visible = false;
             this.brandTextBox.Lines = new string[0];
-            this.brandTextBox.Location = new System.Drawing.Point(144, 46);
+            this.brandTextBox.Location = new System.Drawing.Point(144, 7);
             this.brandTextBox.MaxLength = 32767;
             this.brandTextBox.Name = "brandTextBox";
             this.brandTextBox.PasswordChar = '\0';
@@ -670,10 +730,40 @@
             this.brandTextBox.SelectionStart = 0;
             this.brandTextBox.ShortcutsEnabled = true;
             this.brandTextBox.Size = new System.Drawing.Size(118, 23);
-            this.brandTextBox.TabIndex = 37;
+            this.brandTextBox.TabIndex = 0;
             this.brandTextBox.UseSelectable = true;
             this.brandTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.brandTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // modelTextBox
+            // 
+            // 
+            // 
+            // 
+            this.modelTextBox.CustomButton.Image = null;
+            this.modelTextBox.CustomButton.Location = new System.Drawing.Point(96, 1);
+            this.modelTextBox.CustomButton.Name = "";
+            this.modelTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.modelTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.modelTextBox.CustomButton.TabIndex = 1;
+            this.modelTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.modelTextBox.CustomButton.UseSelectable = true;
+            this.modelTextBox.CustomButton.Visible = false;
+            this.modelTextBox.Lines = new string[0];
+            this.modelTextBox.Location = new System.Drawing.Point(144, 36);
+            this.modelTextBox.MaxLength = 32767;
+            this.modelTextBox.Name = "modelTextBox";
+            this.modelTextBox.PasswordChar = '\0';
+            this.modelTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.modelTextBox.SelectedText = "";
+            this.modelTextBox.SelectionLength = 0;
+            this.modelTextBox.SelectionStart = 0;
+            this.modelTextBox.ShortcutsEnabled = true;
+            this.modelTextBox.Size = new System.Drawing.Size(118, 23);
+            this.modelTextBox.TabIndex = 1;
+            this.modelTextBox.UseSelectable = true;
+            this.modelTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.modelTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // seatsTextBox
             // 
@@ -690,7 +780,7 @@
             this.seatsTextBox.CustomButton.UseSelectable = true;
             this.seatsTextBox.CustomButton.Visible = false;
             this.seatsTextBox.Lines = new string[0];
-            this.seatsTextBox.Location = new System.Drawing.Point(144, 104);
+            this.seatsTextBox.Location = new System.Drawing.Point(144, 94);
             this.seatsTextBox.MaxLength = 32767;
             this.seatsTextBox.Name = "seatsTextBox";
             this.seatsTextBox.PasswordChar = '\0';
@@ -700,7 +790,7 @@
             this.seatsTextBox.SelectionStart = 0;
             this.seatsTextBox.ShortcutsEnabled = true;
             this.seatsTextBox.Size = new System.Drawing.Size(118, 23);
-            this.seatsTextBox.TabIndex = 36;
+            this.seatsTextBox.TabIndex = 3;
             this.seatsTextBox.UseSelectable = true;
             this.seatsTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.seatsTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -721,7 +811,7 @@
             this.powerTextBox.CustomButton.UseSelectable = true;
             this.powerTextBox.CustomButton.Visible = false;
             this.powerTextBox.Lines = new string[0];
-            this.powerTextBox.Location = new System.Drawing.Point(144, 75);
+            this.powerTextBox.Location = new System.Drawing.Point(144, 65);
             this.powerTextBox.MaxLength = 32767;
             this.powerTextBox.Name = "powerTextBox";
             this.powerTextBox.PasswordChar = '\0';
@@ -731,7 +821,7 @@
             this.powerTextBox.SelectionStart = 0;
             this.powerTextBox.ShortcutsEnabled = true;
             this.powerTextBox.Size = new System.Drawing.Size(118, 23);
-            this.powerTextBox.TabIndex = 35;
+            this.powerTextBox.TabIndex = 2;
             this.powerTextBox.UseSelectable = true;
             this.powerTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.powerTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -743,7 +833,7 @@
             this.bearbeitenTile.Location = new System.Drawing.Point(486, 109);
             this.bearbeitenTile.Name = "bearbeitenTile";
             this.bearbeitenTile.Size = new System.Drawing.Size(84, 38);
-            this.bearbeitenTile.TabIndex = 34;
+            this.bearbeitenTile.TabIndex = 13;
             this.bearbeitenTile.Text = "Bearbeiten";
             this.bearbeitenTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bearbeitenTile.UseSelectable = true;
@@ -755,28 +845,28 @@
             this.entfernenTile.Location = new System.Drawing.Point(486, 65);
             this.entfernenTile.Name = "entfernenTile";
             this.entfernenTile.Size = new System.Drawing.Size(84, 38);
-            this.entfernenTile.TabIndex = 33;
+            this.entfernenTile.TabIndex = 12;
             this.entfernenTile.Text = "Entfernen";
             this.entfernenTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.entfernenTile.UseSelectable = true;
             this.entfernenTile.Click += new System.EventHandler(this.EntfernenTile_Click);
             // 
-            // hinzufügenTile
+            // addTile
             // 
-            this.hinzufügenTile.ActiveControl = null;
-            this.hinzufügenTile.Location = new System.Drawing.Point(486, 21);
-            this.hinzufügenTile.Name = "hinzufügenTile";
-            this.hinzufügenTile.Size = new System.Drawing.Size(84, 38);
-            this.hinzufügenTile.TabIndex = 32;
-            this.hinzufügenTile.Text = "Hinzufügen";
-            this.hinzufügenTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.hinzufügenTile.UseSelectable = true;
-            this.hinzufügenTile.Click += new System.EventHandler(this.HinzufügenTile_Click);
+            this.addTile.ActiveControl = null;
+            this.addTile.Location = new System.Drawing.Point(486, 21);
+            this.addTile.Name = "addTile";
+            this.addTile.Size = new System.Drawing.Size(84, 38);
+            this.addTile.TabIndex = 11;
+            this.addTile.Text = "Add";
+            this.addTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.addTile.UseSelectable = true;
+            this.addTile.Click += new System.EventHandler(this.addTile_Click);
             // 
             // priceTextLabel1
             // 
             this.priceTextLabel1.AutoSize = true;
-            this.priceTextLabel1.Location = new System.Drawing.Point(19, 243);
+            this.priceTextLabel1.Location = new System.Drawing.Point(19, 306);
             this.priceTextLabel1.Name = "priceTextLabel1";
             this.priceTextLabel1.Size = new System.Drawing.Size(37, 19);
             this.priceTextLabel1.TabIndex = 31;
@@ -785,25 +875,25 @@
             // gearboxTextLabel1
             // 
             this.gearboxTextLabel1.AutoSize = true;
-            this.gearboxTextLabel1.Location = new System.Drawing.Point(19, 137);
+            this.gearboxTextLabel1.Location = new System.Drawing.Point(19, 156);
             this.gearboxTextLabel1.Name = "gearboxTextLabel1";
-            this.gearboxTextLabel1.Size = new System.Drawing.Size(76, 19);
+            this.gearboxTextLabel1.Size = new System.Drawing.Size(59, 19);
             this.gearboxTextLabel1.TabIndex = 30;
-            this.gearboxTextLabel1.Text = "Getriebeart";
+            this.gearboxTextLabel1.Text = "Gearbox";
             // 
             // fuelTextLabel1
             // 
             this.fuelTextLabel1.AutoSize = true;
-            this.fuelTextLabel1.Location = new System.Drawing.Point(19, 166);
+            this.fuelTextLabel1.Location = new System.Drawing.Point(19, 185);
             this.fuelTextLabel1.Name = "fuelTextLabel1";
-            this.fuelTextLabel1.Size = new System.Drawing.Size(78, 19);
+            this.fuelTextLabel1.Size = new System.Drawing.Size(33, 19);
             this.fuelTextLabel1.TabIndex = 29;
-            this.fuelTextLabel1.Text = "Kraftstoffart";
+            this.fuelTextLabel1.Text = "Fuel";
             // 
             // statusTextLabel1
             // 
             this.statusTextLabel1.AutoSize = true;
-            this.statusTextLabel1.Location = new System.Drawing.Point(19, 214);
+            this.statusTextLabel1.Location = new System.Drawing.Point(19, 277);
             this.statusTextLabel1.Name = "statusTextLabel1";
             this.statusTextLabel1.Size = new System.Drawing.Size(43, 19);
             this.statusTextLabel1.TabIndex = 28;
@@ -812,52 +902,91 @@
             // seatsTextLabel1
             // 
             this.seatsTextLabel1.AutoSize = true;
-            this.seatsTextLabel1.Location = new System.Drawing.Point(20, 108);
+            this.seatsTextLabel1.Location = new System.Drawing.Point(20, 98);
             this.seatsTextLabel1.Name = "seatsTextLabel1";
-            this.seatsTextLabel1.Size = new System.Drawing.Size(64, 19);
+            this.seatsTextLabel1.Size = new System.Drawing.Size(39, 19);
             this.seatsTextLabel1.TabIndex = 27;
-            this.seatsTextLabel1.Text = "Sitzplätze";
+            this.seatsTextLabel1.Text = "Seats";
             // 
             // powerTextLabel1
             // 
             this.powerTextLabel1.AutoSize = true;
-            this.powerTextLabel1.Location = new System.Drawing.Point(19, 79);
+            this.powerTextLabel1.Location = new System.Drawing.Point(19, 69);
             this.powerTextLabel1.Name = "powerTextLabel1";
-            this.powerTextLabel1.Size = new System.Drawing.Size(56, 19);
+            this.powerTextLabel1.Size = new System.Drawing.Size(45, 19);
             this.powerTextLabel1.TabIndex = 26;
-            this.powerTextLabel1.Text = "Leistung";
-            // 
-            // brandTextLabel1
-            // 
-            this.brandTextLabel1.AutoSize = true;
-            this.brandTextLabel1.Location = new System.Drawing.Point(19, 50);
-            this.brandTextLabel1.Name = "brandTextLabel1";
-            this.brandTextLabel1.Size = new System.Drawing.Size(46, 19);
-            this.brandTextLabel1.TabIndex = 25;
-            this.brandTextLabel1.Text = "Marke";
+            this.powerTextLabel1.Text = "Power";
             // 
             // modelTextLabel1
             // 
-            this.modelTextLabel1.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.modelTextLabel1.AutoSize = true;
-            this.modelTextLabel1.Location = new System.Drawing.Point(19, 21);
+            this.modelTextLabel1.Location = new System.Drawing.Point(19, 40);
             this.modelTextLabel1.Name = "modelTextLabel1";
-            this.modelTextLabel1.Size = new System.Drawing.Size(50, 19);
-            this.modelTextLabel1.TabIndex = 24;
-            this.modelTextLabel1.Text = "Modell";
+            this.modelTextLabel1.Size = new System.Drawing.Size(47, 19);
+            this.modelTextLabel1.TabIndex = 25;
+            this.modelTextLabel1.Text = "Model";
+            // 
+            // brandTextLabel1
+            // 
+            this.brandTextLabel1.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.brandTextLabel1.AutoSize = true;
+            this.brandTextLabel1.Location = new System.Drawing.Point(19, 11);
+            this.brandTextLabel1.Name = "brandTextLabel1";
+            this.brandTextLabel1.Size = new System.Drawing.Size(44, 19);
+            this.brandTextLabel1.TabIndex = 24;
+            this.brandTextLabel1.Text = "Brand";
             // 
             // metroStyleManager1
             // 
             this.metroStyleManager1.Owner = this;
             // 
+            // maxSpeedLabel
+            // 
+            this.maxSpeedLabel.AutoSize = true;
+            this.maxSpeedLabel.Location = new System.Drawing.Point(19, 127);
+            this.maxSpeedLabel.Name = "maxSpeedLabel";
+            this.maxSpeedLabel.Size = new System.Drawing.Size(78, 19);
+            this.maxSpeedLabel.TabIndex = 47;
+            this.maxSpeedLabel.Text = "Max. Speed";
+            // 
+            // maxSpeedTextBox
+            // 
+            // 
+            // 
+            // 
+            this.maxSpeedTextBox.CustomButton.Image = null;
+            this.maxSpeedTextBox.CustomButton.Location = new System.Drawing.Point(96, 1);
+            this.maxSpeedTextBox.CustomButton.Name = "";
+            this.maxSpeedTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.maxSpeedTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.maxSpeedTextBox.CustomButton.TabIndex = 1;
+            this.maxSpeedTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.maxSpeedTextBox.CustomButton.UseSelectable = true;
+            this.maxSpeedTextBox.CustomButton.Visible = false;
+            this.maxSpeedTextBox.Lines = new string[0];
+            this.maxSpeedTextBox.Location = new System.Drawing.Point(144, 123);
+            this.maxSpeedTextBox.MaxLength = 32767;
+            this.maxSpeedTextBox.Name = "maxSpeedTextBox";
+            this.maxSpeedTextBox.PasswordChar = '\0';
+            this.maxSpeedTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.maxSpeedTextBox.SelectedText = "";
+            this.maxSpeedTextBox.SelectionLength = 0;
+            this.maxSpeedTextBox.SelectionStart = 0;
+            this.maxSpeedTextBox.ShortcutsEnabled = true;
+            this.maxSpeedTextBox.Size = new System.Drawing.Size(118, 23);
+            this.maxSpeedTextBox.TabIndex = 4;
+            this.maxSpeedTextBox.UseSelectable = true;
+            this.maxSpeedTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.maxSpeedTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 432);
+            this.ClientSize = new System.Drawing.Size(895, 500);
             this.Controls.Add(this.tabControl);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Car Sharer 4.0";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl.ResumeLayout(false);
@@ -908,23 +1037,29 @@
         private MetroFramework.Controls.MetroTabPage addVehicleTabPage;
         private MetroFramework.Controls.MetroTile bearbeitenTile;
         private MetroFramework.Controls.MetroTile entfernenTile;
-        private MetroFramework.Controls.MetroTile hinzufügenTile;
+        private MetroFramework.Controls.MetroTile addTile;
         private MetroFramework.Controls.MetroLabel priceTextLabel1;
         private MetroFramework.Controls.MetroLabel gearboxTextLabel1;
         private MetroFramework.Controls.MetroLabel fuelTextLabel1;
         private MetroFramework.Controls.MetroLabel statusTextLabel1;
         private MetroFramework.Controls.MetroLabel seatsTextLabel1;
         private MetroFramework.Controls.MetroLabel powerTextLabel1;
-        private MetroFramework.Controls.MetroLabel brandTextLabel1;
         private MetroFramework.Controls.MetroLabel modelTextLabel1;
+        private MetroFramework.Controls.MetroLabel brandTextLabel1;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private MetroFramework.Controls.MetroTextBox powerTextBox;
         private MetroFramework.Controls.MetroTextBox priceTextBox;
         private MetroFramework.Controls.MetroTextBox statusTextBox;
         private MetroFramework.Controls.MetroTextBox fuelTextBox;
         private MetroFramework.Controls.MetroTextBox gearboxTextBox;
-        private MetroFramework.Controls.MetroTextBox modelTextBox;
         private MetroFramework.Controls.MetroTextBox brandTextBox;
+        private MetroFramework.Controls.MetroTextBox modelTextBox;
         private MetroFramework.Controls.MetroTextBox seatsTextBox;
+        private MetroFramework.Controls.MetroTextBox colourTextBox;
+        private MetroFramework.Controls.MetroLabel colourLabel;
+        private MetroFramework.Controls.MetroTextBox licenseclassTextBox;
+        private MetroFramework.Controls.MetroLabel licenseclassTextLabel;
+        private MetroFramework.Controls.MetroTextBox maxSpeedTextBox;
+        private MetroFramework.Controls.MetroLabel maxSpeedLabel;
     }
 }

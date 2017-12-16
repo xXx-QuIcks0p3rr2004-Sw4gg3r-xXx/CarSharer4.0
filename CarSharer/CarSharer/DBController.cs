@@ -105,5 +105,35 @@ namespace CarSharer
                 }
             }
         }
+        //public static void InsertCar(Car car, MainForm mainForm)
+        public static void InsertCar(Car car, MainForm mainForm)
+        {
+            using (MySqlConnection con = new MySqlConnection(@"host=mysql8.db4free.net;user=schoolproject;password=carsharing;database=carsharing4;port=3307"))
+            {
+                try
+                {
+                    // open connection to database 
+                    con.Open();
+
+                    // INTERACTION WITH DATABASE
+                    using (MySqlCommand cmd = new MySqlCommand(@"INSERT INTO Car (Brand, Model, PS, Seats, MaxSpeed, Price, Fuel, Gearbox, Colour, Status, Licenseclass) VALUES 
+                        ('" + car.brand + "', '" + car.model + "', " + car.power + ", " + car.seats + ", " + car.maxspeed + ", " + car.price + ", '" + car.fuel + 
+                        "', '" + car.gearbox + "', '" + car.colour + "', '" + car.status + "', '" + car.licenseclass + "')", con))
+                    {
+                        cmd.ExecuteNonQuery();
+                        MetroMessageBox.Show(mainForm, "Car added.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MetroMessageBox.Show(mainForm,"Need more details. " + ex.Message);
+                }
+                finally
+                {
+                    // close connection to database
+                    con.Close();
+                }
+            }
+        }
     }
 }
