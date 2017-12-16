@@ -19,6 +19,14 @@ namespace CarSharer
         public string status;
         public bool favourite;
 
+        public string DisplayName
+        {
+            get
+            {
+                return "[" + id + "] " + brand + " " + model;
+            }
+        }
+
         public Car(int _id, string _brand, string _model, int _power, int _seats, int _price, string _gearbox, string _fuel, string _status, bool _favourite)
         {
             id = _id;

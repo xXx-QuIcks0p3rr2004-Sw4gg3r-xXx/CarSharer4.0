@@ -81,6 +81,14 @@
             this.brandTextLabel1 = new MetroFramework.Controls.MetroLabel();
             this.modelTextLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.showModelTextLabel = new MetroFramework.Controls.MetroLabel();
+            this.showGearboxTextLabel = new MetroFramework.Controls.MetroLabel();
+            this.showSeatsTextLabel = new MetroFramework.Controls.MetroLabel();
+            this.showFuelTextLabel = new MetroFramework.Controls.MetroLabel();
+            this.showPSTextLabel = new MetroFramework.Controls.MetroLabel();
+            this.showBrandTextLabel = new MetroFramework.Controls.MetroLabel();
+            this.showStatusTextLabel = new MetroFramework.Controls.MetroLabel();
+            this.showPriceTextLabel = new MetroFramework.Controls.MetroLabel();
             this.tabControl.SuspendLayout();
             this.vehicleTabPage.SuspendLayout();
             this.optionTabPage.SuspendLayout();
@@ -95,13 +103,21 @@
             this.tabControl.Controls.Add(this.addVehicleTabPage);
             this.tabControl.Location = new System.Drawing.Point(0, 83);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 2;
+            this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(895, 345);
             this.tabControl.TabIndex = 1;
             this.tabControl.UseSelectable = true;
             // 
             // vehicleTabPage
             // 
+            this.vehicleTabPage.Controls.Add(this.showPriceTextLabel);
+            this.vehicleTabPage.Controls.Add(this.showStatusTextLabel);
+            this.vehicleTabPage.Controls.Add(this.showBrandTextLabel);
+            this.vehicleTabPage.Controls.Add(this.showPSTextLabel);
+            this.vehicleTabPage.Controls.Add(this.showFuelTextLabel);
+            this.vehicleTabPage.Controls.Add(this.showSeatsTextLabel);
+            this.vehicleTabPage.Controls.Add(this.showGearboxTextLabel);
+            this.vehicleTabPage.Controls.Add(this.showModelTextLabel);
             this.vehicleTabPage.Controls.Add(this.priceLabel);
             this.vehicleTabPage.Controls.Add(this.statusLabel);
             this.vehicleTabPage.Controls.Add(this.fuelLabel);
@@ -275,6 +291,7 @@
             this.carListBox.Name = "carListBox";
             this.carListBox.Size = new System.Drawing.Size(253, 251);
             this.carListBox.TabIndex = 24;
+            this.carListBox.SelectedValueChanged += new System.EventHandler(this.carListBox_SelectedValueChanged);
             // 
             // priceTextLabel
             // 
@@ -299,9 +316,9 @@
             this.fuelTextLabel.AutoSize = true;
             this.fuelTextLabel.Location = new System.Drawing.Point(296, 169);
             this.fuelTextLabel.Name = "fuelTextLabel";
-            this.fuelTextLabel.Size = new System.Drawing.Size(78, 19);
+            this.fuelTextLabel.Size = new System.Drawing.Size(61, 19);
             this.fuelTextLabel.TabIndex = 19;
-            this.fuelTextLabel.Text = "Kraftstoffart";
+            this.fuelTextLabel.Text = "Kraftstoff";
             // 
             // statusTextLabel
             // 
@@ -850,6 +867,86 @@
             // 
             this.metroStyleManager1.Owner = this;
             // 
+            // showModelTextLabel
+            // 
+            this.showModelTextLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.showModelTextLabel.AutoSize = true;
+            this.showModelTextLabel.Location = new System.Drawing.Point(414, 23);
+            this.showModelTextLabel.Name = "showModelTextLabel";
+            this.showModelTextLabel.Size = new System.Drawing.Size(50, 19);
+            this.showModelTextLabel.TabIndex = 37;
+            this.showModelTextLabel.Text = "Modell";
+            // 
+            // showGearboxTextLabel
+            // 
+            this.showGearboxTextLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.showGearboxTextLabel.AutoSize = true;
+            this.showGearboxTextLabel.Location = new System.Drawing.Point(414, 140);
+            this.showGearboxTextLabel.Name = "showGearboxTextLabel";
+            this.showGearboxTextLabel.Size = new System.Drawing.Size(76, 19);
+            this.showGearboxTextLabel.TabIndex = 38;
+            this.showGearboxTextLabel.Text = "Getriebeart";
+            // 
+            // showSeatsTextLabel
+            // 
+            this.showSeatsTextLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.showSeatsTextLabel.AutoSize = true;
+            this.showSeatsTextLabel.Location = new System.Drawing.Point(414, 110);
+            this.showSeatsTextLabel.Name = "showSeatsTextLabel";
+            this.showSeatsTextLabel.Size = new System.Drawing.Size(64, 19);
+            this.showSeatsTextLabel.TabIndex = 39;
+            this.showSeatsTextLabel.Text = "Sitzplätze";
+            // 
+            // showFuelTextLabel
+            // 
+            this.showFuelTextLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.showFuelTextLabel.AutoSize = true;
+            this.showFuelTextLabel.Location = new System.Drawing.Point(414, 169);
+            this.showFuelTextLabel.Name = "showFuelTextLabel";
+            this.showFuelTextLabel.Size = new System.Drawing.Size(61, 19);
+            this.showFuelTextLabel.TabIndex = 40;
+            this.showFuelTextLabel.Text = "Kraftstoff";
+            // 
+            // showPSTextLabel
+            // 
+            this.showPSTextLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.showPSTextLabel.AutoSize = true;
+            this.showPSTextLabel.Location = new System.Drawing.Point(414, 81);
+            this.showPSTextLabel.Name = "showPSTextLabel";
+            this.showPSTextLabel.Size = new System.Drawing.Size(56, 19);
+            this.showPSTextLabel.TabIndex = 41;
+            this.showPSTextLabel.Text = "Leistung";
+            // 
+            // showBrandTextLabel
+            // 
+            this.showBrandTextLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.showBrandTextLabel.AutoSize = true;
+            this.showBrandTextLabel.Location = new System.Drawing.Point(414, 52);
+            this.showBrandTextLabel.Name = "showBrandTextLabel";
+            this.showBrandTextLabel.Size = new System.Drawing.Size(46, 19);
+            this.showBrandTextLabel.TabIndex = 42;
+            this.showBrandTextLabel.Text = "Marke";
+            // 
+            // showStatusTextLabel
+            // 
+            this.showStatusTextLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.showStatusTextLabel.AutoSize = true;
+            this.showStatusTextLabel.Location = new System.Drawing.Point(414, 232);
+            this.showStatusTextLabel.Name = "showStatusTextLabel";
+            this.showStatusTextLabel.Size = new System.Drawing.Size(43, 19);
+            this.showStatusTextLabel.TabIndex = 43;
+            this.showStatusTextLabel.Text = "Status";
+            // 
+            // showPriceTextLabel
+            // 
+            this.showPriceTextLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.showPriceTextLabel.AutoSize = true;
+            this.showPriceTextLabel.Location = new System.Drawing.Point(414, 261);
+            this.showPriceTextLabel.Name = "showPriceTextLabel";
+            this.showPriceTextLabel.Size = new System.Drawing.Size(37, 19);
+            this.showPriceTextLabel.TabIndex = 44;
+            this.showPriceTextLabel.Text = "Preis";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -926,5 +1023,13 @@
         private MetroFramework.Controls.MetroTextBox modelTextBox;
         private MetroFramework.Controls.MetroTextBox brandTextBox;
         private MetroFramework.Controls.MetroTextBox seatsTextBox;
+        private MetroFramework.Controls.MetroLabel showPriceTextLabel;
+        private MetroFramework.Controls.MetroLabel showStatusTextLabel;
+        private MetroFramework.Controls.MetroLabel showBrandTextLabel;
+        private MetroFramework.Controls.MetroLabel showPSTextLabel;
+        private MetroFramework.Controls.MetroLabel showFuelTextLabel;
+        private MetroFramework.Controls.MetroLabel showSeatsTextLabel;
+        private MetroFramework.Controls.MetroLabel showGearboxTextLabel;
+        private MetroFramework.Controls.MetroLabel showModelTextLabel;
     }
 }
