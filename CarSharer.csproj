@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Car.cs" />
+    <Compile Include="CarModel.cs" />
     <Compile Include="CreateAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
