@@ -27,6 +27,7 @@ namespace CarSharer
             {
                 try
                 {
+                    
                     // open connection to database
                     con.Open();
                     // INTERACTION WITH DATABASE
